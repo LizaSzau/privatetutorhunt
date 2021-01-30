@@ -1,0 +1,32 @@
+hr.reg { margin-bottom: 30px; }
+.register-frame { margin-left: 110px; width: 600px; margin-bottom: 60px; overflow: auto; }
+.register-frame > div { clear: both; }
+.register-frame .row-data { height: 40px; margin-bottom: 20px; }
+.register-frame .row-data .label { float: left; text-align: right; padding-right: 10px; min-height: 30px; width: 200px; line-height: 40px; }
+.register-frame .row-data .input { float: left; width: 400px; }
+.register-frame .row-data:last-child  .input{ text-align: right; }
+.register-frame input { margin: 0; width: 100%; }
+.register-frame button { margin: 0; }
+.register-frame .btn-reset { width: 100%; }
+.register-frame .message-error { width: 400px; margin-left: 200px; padding: 10px; }
+.register-frame .message-warning  { width: 400px; margin-left: 200px; padding: 10px; }
+.register-frame .message-success  { width: 400px; margin-left: 200px; padding: 10px; }
+.register-frame .hide { display: none; }
+
+/**************************************
+MAX 900
+**************************************/
+@media (max-width: 900px) { 
+	.register-frame { margin-left: auto; margin-right: auto; cborder: 1px solid blue;}
+}
+
+/**************************************
+MAX 700
+**************************************/
+@media (max-width: 700px) { 
+	.register-frame { width: 100%; margin-left: 0; margin-right: 20px; }
+	.register-frame .row-data .label { text-align: left; width: 100%; }
+	.register-frame .row-data .input { width: 100%; margin-bottom: 10px; }
+	.register-frame .message-error { width: 100%; margin-left: 0; }
+	.register-frame .message-warning  { width: 100%; margin-left: 0; }
+}

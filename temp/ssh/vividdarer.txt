@@ -1,0 +1,14 @@
+Fingerprint
+SHA256:n+dxYDb91rQ2UBDGEpJ92XBzQyVVdpM7pKKlyyWHUmQ lizas@DESKTOP-KIHH012
+
++---[RSA 2048]----+
+|         .o.o=BB@|
+|         E.o.+o**|
+|        o   o o..|
+|         . o o.o |
+|        S = *.. o|
+|       . * * o.oo|
+|        o B o .++|
+|         o o o...|
+|            .    |
++----[SHA256]-----+

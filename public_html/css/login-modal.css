@@ -1,0 +1,78 @@
+.modal {  background: var(--white); z-index: 9999; position: fixed; width: 700px; xheight: 285px; top: 50%; left: 50%; transform: translate(-50%,-50%); overflow: hidden; display: none; }
+.modal-display { display: block; }
+.modal-blur { pointer-events: none; filter: blur(10px) grayscale(70%); -webkit-filter: blur(10px) grayscale(70%); -moz-filter: blur(10px) grayscale(70%); -o-filter: blur(10px) grayscale(70%); -ms-filter: blur(10px) grayscale(70%); }
+.modal, .modal-blur { transition: all 0.3s linear; }
+.modal .close { position: absolute; right: 0; top: 0; width: 26px; height: 26px; cursor: pointer; }
+.modal .close div { margin-top: -4px; text-align: center; font-size: 22px; color: var(--grey-3);  }
+.modal .close:hover { background-color: var(--grey-1); }
+
+.modal .modal-flex { display: flex; padding: 40px; }
+.modal .modal-flex .left { height: 205px; width: 50%; }
+.modal .modal-flex .left a:link { text-decoration: none; }
+.modal .modal-flex .left .social { width: 100%; display: flex; height: 55px; padding: 15px; margin-bottom: 20px; }
+.modal .modal-flex .left .social > div { color: var(--white); }
+.modal .modal-flex .left .facebook { background: var(--blue-dark); }
+.modal .modal-flex .left .facebook:hover { background: #20204c; }
+.modal .modal-flex .left .google { background: var(--red); }
+.modal .modal-flex .left .google:hover { background: #eb0631; }
+.modal .modal-flex .left .twitter { background: var(--blue-light); }
+.modal .modal-flex .left .twitter:hover { background: #218cbe; }
+.modal .modal-flex .left .v-line { margin: 0 10px; background: rgb(255, 255, 255, 0.4); width: 1px; }
+
+.modal .modal-flex .center { height: 205px; width: 100px; }
+.modal .modal-flex .center .line { width: 1px; height: 100%; background: var(--grey-3); margin: 0 auto; }
+.modal .modal-flex .center .or { position: absolute; width: 34px; height: 34px; top: 124px; left: 50%; margin-left: -17px; border: 1px solid var(--grey-3); background: var(--white); 
+		color: var(--grey-3); font-size: 17px;  line-height: 30px; text-align: center; border-radius: 17px; -moz-border-radius: 17px; -webkit-border-radius: 17px; }
+
+.modal .modal-flex .right { height: 205px; width: 50%; }
+.modal .modal-flex .right > div:first-child  { color: var(--blue-dark); font-family: 'avenir-bold'; margin-bottom: 7px; }
+.modal .modal-flex .right input { width: 100%; border-bottom: 1px solid var(--grey-3); border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; padding: 0;}
+.modal .modal-flex .right input[type=checkbox] { width: 20px; height: 20px; xmargin-bottom: -8px; padding: 0; margin: 0;}
+.modal .modal-flex .right input:focus { outline: none; background: none; border-bottom: 1px solid var(--blue-dark); color: var(--blue-dark) }
+.modal .modal-flex .right .last-row { position: relative; overflow: hidden; margin-top: 25px; }
+.modal .modal-flex .right .last-row .remember { position: absolute; bottom: 2px; left: 0; }
+.modal .modal-flex .right .last-row .remember > div { float: left; }
+.modal .modal-flex .right .last-row .remember div:first-child { margin-bottom: -9px; margin-right: 10px; }
+.modal .modal-flex .right .last-row .button { float: right; margin-bottom: 0; }
+
+.modal .modal-flex .right ::placeholder { color: var(--grey-3);  }
+.modal .modal-flex .right :-ms-input-placeholder { color: var(--grey-3);  }
+.modal .modal-flex .right ::-ms-input-placeholder { color: var(--grey-3);  }
+
+.modal .bottom { background: var(--blue-dark); overflow: auto; padding: 10px 0; }
+.modal .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
+.modal .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
+.modal .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }
+.modal .bottom  a:hover { text-decoration: underline; }
+
+/**************************************
+MAX 700
+**************************************/
+@media (max-width: 780px) { 
+	.modal { width: calc(100% - 40px);  }
+	.modal .modal-flex { display: block; }
+	
+	.modal .modal-flex .left { width: 100%; }
+
+	.modal .modal-flex .center { height: 34px; width: 100%; border-bottom: 1px solid var(--grey-3); margin: 20px 0 40px 0; }
+	.modal .modal-flex .center .line { display: none; }
+	.modal .modal-flex .center .or { position: relative; left: 50%; top: 17px; }
+
+	.modal .modal-flex .right { height: 205px; width: 100%; }
+	.modal .modal-flex .right > div:first-child  { color: var(--blue-dark); font-family: 'avenir-bold'; margin-bottom: 7px; }
+	.modal .modal-flex .right input { width: 100%; border-bottom: 1px solid var(--grey-3); border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; padding: 0;}
+	.modal .modal-flex .right input[type=checkbox] { width: 20px; height: 20px; margin-bottom: -10px; padding: 0; margin: 0;}
+	.modal .modal-flex .right input:focus { outline: none; background: none; border-bottom: 1px solid var(--blue-dark); }
+	.modal .modal-flex .right .last-row { position: relative; overflow: hidden; margin-top: 25px; }
+	.modal .modal-flex .right .last-row .remember { position: absolute; bottom: -3px; left: 0; }
+	.modal .modal-flex .right .last-row .remember > div { float: left; }
+	.modal .modal-flex .right .last-row .remember div:first-child { margin-bottom: -9px; margin-right: 10px; }
+	.modal .modal-flex .right .last-row .button { float: right; }
+
+	.modal .bottom { background: var(--blue-dark); overflow: auto; padding: 10px 0; }
+	.modal .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
+	.modal .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
+	.modal .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }
+	.modal .bottom  a:hover { text-decoration: underline; }
+}
+	
