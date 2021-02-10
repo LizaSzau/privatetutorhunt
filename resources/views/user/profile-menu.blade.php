@@ -17,8 +17,8 @@
 			<div id="pm_subjects" @if ($tutor_ready->subjects == 1) class="tutor-menu-green" @endif><img src="{{ asset('images/fa-tick.png') }}"></div>
 		</div>
 		<div class="status-item">
-			<div><a href="{{ url('/tutor/profile/contact') }}">Locations</a></div>
-			<div><img src="{{ asset('images/fa-tick.png') }}"></div>
+			<div><a href="{{ url('/tutor/profile/locations') }}">Locations</a></div>
+			<div id="pm_locations" @if ($tutor_ready->locations == 1) class="tutor-menu-green" @endif><img src="{{ asset('images/fa-tick.png') }}"></div>
 		</div>
 		<div class="status-item">
 			<div><a href="{{ url('/tutor/profile/contact') }}">Details</a></div>

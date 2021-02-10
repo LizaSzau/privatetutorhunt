@@ -1,4 +1,6 @@
 var subject_number = document.getElementById('subject_number').value
+var subject_missing_number = document.getElementById('subject_missing_number').value
+var subject_missing_max = 3
 var subject_text = ''
 var subject_id = 0
 var level_text = ''
@@ -27,6 +29,10 @@ for (let i = 0; i < tutor_subjects.childNodes.length; i++) {
 		arr_subject_id.push(tutor_subjects.childNodes[i].id)
 	}
 }
+
+// Hide Missing Subject Form if subjects number is max and show subjects if exists.
+hide_missing_subject_form()
+show_suggested_subjects_div()
 
 //-----------------------------------------------------------------------------
 // Submit subject form - add item
@@ -166,4 +172,81 @@ function delete_subject(subject_id, level_id) {
 	.catch(function(error) {
 		//console.log(error)
 	})
+}
+
+//-----------------------------------------------------------------------------
+// Submit suggest subject form
+//-----------------------------------------------------------------------------
+
+function validate_form_missing() {
+	var subject_missing = document.getElementById('subject_missing').value
+	
+	if (subject_missing.length > 0 && subject_missing_number < subject_missing_max) {
+		add_missing_subject_DOM(subject_missing)
+		subject_missing_number++
+		hide_missing_subject_form()
+		show_suggested_subjects_div()
+		upload_suggest_subject(subject_missing);
+	}
+	
+	return false
+}
+
+//-----------------------------------------------------------------------------
+// Suggest a subject
+//-----------------------------------------------------------------------------
+
+function upload_suggest_subject(subject_missing) {
+	let url = 'form/subjects/missing'
+	let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+	let data = new FormData()
+	
+	data.append('subject', subject_missing)
+	
+	fetch(url, {
+		headers: {
+			'Accept': 'text-plain',
+			'X-CSRF-TOKEN': token
+		},
+		method: 'post',
+		body: data
+	})
+	.then(response => response.json())
+	.then(data => {
+		// console.log(data)
+	})
+	.catch(function(error) {
+		// console.log(error)
+	})
+}
+
+//-----------------------------------------------------------------------------
+// Add item to suggested subjects list
+//-----------------------------------------------------------------------------
+
+function add_missing_subject_DOM(subject) {
+	var ul = document.getElementById('subjects_list');
+	var li = document.createElement('li');
+	li.appendChild(document.createTextNode(subject));
+	ul.appendChild(li);	
+}
+
+//-----------------------------------------------------------------------------
+// Hide Missing Subject Form
+//-----------------------------------------------------------------------------
+
+function hide_missing_subject_form() {
+	if (subject_missing_number >= subject_missing_max) {
+		document.getElementById('missing').className = 'hide'
+	}
+}
+
+//-----------------------------------------------------------------------------
+// Show suggested subjects div
+//-----------------------------------------------------------------------------
+
+function show_suggested_subjects_div() {
+	if (subject_missing_number > 0) {
+		document.getElementById('suggested_subjects').className = 'show'
+	}
 }

@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'PrivateTutorHunt'),
+	'email' => env('APP_EMAIL', 'info@privatetutorhunt.com'),
+	'email_vivid' => env('APP_EMAIL_VIVID', 'vivid.darer@gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -176,7 +178,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 		
 		Laravel\Socialite\SocialiteServiceProvider::class,
-
     ],
 
     /*
@@ -229,7 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+		//'Str' => Illuminate\Support\Str::class,
     ],
 
 ];

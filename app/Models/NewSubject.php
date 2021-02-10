@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
+use DB;
+use Carbon\Carbon;
 
-class TmpHome extends Model
+class NewSubject extends Model
 {
-    use HasFactory;
-	protected $table = 'tmp_home;
+	use HasFactory;
+	protected $table = 'new_subjects';
 }

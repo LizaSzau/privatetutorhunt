@@ -8,7 +8,7 @@
 			<div class="active-menu @if(Route::current()->getName() == 'guest_home') active @endif "></div>
 		</li>
 		<li>
-			<a href="{{ url('/tutor-subjects-list') }}" alt="list">
+			<a href="{{ url('/subjects') }}" alt="list">
 				<img src="{{ asset('images/fa-search.png') }}" class="fa-png" alt="Subjects" title="Subjects">
 				<span class="link">Subjects</span>
 			</a>

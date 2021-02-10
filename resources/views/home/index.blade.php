@@ -26,7 +26,7 @@ $css_file = 'home';
 
 <div class="under-construction rounded">
 	THIS SITE IS UNDER CONSTRUCTION.
-	<br>IT IS EXPECTED TO START IN JANUARY OF 2021.
+	<br>IT IS EXPECTED TO START IN MARCH OF 2021.
 </div>
 	
 <div class="categ-flex-frame">

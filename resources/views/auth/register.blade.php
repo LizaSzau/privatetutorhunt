@@ -34,7 +34,8 @@ If you are a student looking for a tutor or teacher, you don't need to register.
 <div class="space-30"></div>
 
 <form method="POST" action="{{ route('register') }}" name="form_register" onsubmit="return validate_form()" novalidate>
-	@csrf
+	@csrf 
+	
 	<div class="register-frame">	
 		<div class="row-data">
 			<div class="label"><label for="name">Name:</label></div>
@@ -84,7 +85,22 @@ If you are a student looking for a tutor or teacher, you don't need to register.
 			<div class="label"></div>
 			<div class="input"><button id="button_submit" type="submit">Register</button></div>
 		</div>
+
+		{!! RecaptchaV3::initJs() !!}
+		{!! RecaptchaV3::field('register') !!}
+		
+		@error('g-recaptcha-response')
+		<div class="message-error">
+			 <div role="alert">ReCaptcha validation failed. Please try it again.</div> 
+		</div>
+		@enderror	
+		
 	</div>
 </form>
 
+
+   
+
+						
+						
 @endsection

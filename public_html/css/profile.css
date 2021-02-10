@@ -58,19 +58,20 @@
 #drop_area #fileElem { display: none; }
 #drop_area .ajax { margin-top: 30px; }
 
-#photos { display: flex; width: 540px; margin: 0 auto; }
+#photos { display: flex; width: 540px; margin: 0 auto; justify-content: flex-end; padding-right: 15px; }
 #photos > div { width: 100px; height: 100px; margin-right: 5px; cursor: move; background-repeat:no-repeat; background-size:cover; }
 
 .frame-tutor-form .row-data .input.buttons.video { display: block; }
 .frame-tutor-form .row-data .input.buttons.add { display: block; }
 .frame-tutor-form .input.buttons.video .btn-next { float: right; }
 
-.frame-video { display: flex; width: 540px; margin: 40px auto; padding: 20px 20px 0 0; justify-content: space-between; }
+.frame-video { display: flex; width: 540px; margin: 40px auto; padding: 20px 20px 0 0; justify-content: space-between; flex-direction: row-reverse; }
 .frame-video > div { position: relative; width: calc(50% - 5px); overflow: hidden; display: none; }
 .frame-video > div iframe{width: 100%; max-width: 100%; }
-.frame-video > div button { position: absolute; right: 0; z-index: 9999; background: var(--red); color: var(--white); width: 40px; margin: 0;  padding: 0; }
+.frame-video > div button { position: absolute; right: 0; z-index: 9999; background: var(--red); color: var(--white); width: 40px; margin: 0;  padding: 0; 
+		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-top-right-radius: 10px; -moz-border-top-right-radius: 10px; -webkit-border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px; -moz-border-bottom-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; }
 .frame-video > div button:hover { background: var(--red-dark); }
-	border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-top-right-radius: 10px; -moz-border-top-right-radius: 10px; -webkit-border-top-right-radius: 10px;}
 
 #ajax_video { width: 540px; margin-top: 40px; }
 #ajax_video img { width: 100%; margin: 0; }
@@ -88,6 +89,17 @@
 .frame-tutor-form .form-subjects .message-error { width: calc(100% - 20px); margin: 20px 20px 20px 0; }
 .frame-tutor-form .input.buttons.subject { display: block; }
 .frame-tutor-form .input.buttons.subject .btn-next { float: right; margin-top: 20px; }
+
+.frame-tutor .missing-subject { background: var(--grey-2); margin: 30px 20px 0 0; padding: 20px; overflow: hidden; }
+.frame-tutor .missing-subject h3 { padding-top: 0; }
+.frame-tutor .missing-subject .question { color: var(--blue-dark); font-weight: bold; }
+.frame-tutor .missing-subject .info { margin: 20px 0; }
+.frame-tutor .missing-subject .row-data .label { text-align: left; width: 80px; }
+.frame-tutor .missing-subject .row-data .input { width: 380px; }
+.frame-tutor .missing-subject .subjects-list { color: var(--blue-dark); font-weight: bold; margin: 40px 0 10px 0; }
+.frame-tutor .missing-subject ul { margin-left: 40px; }
+
+.frame-tutor #map { height: 400px; width: 100%; background: pink; }
 
 /********************************************************************************
 MEDIA
@@ -146,6 +158,9 @@ MAX 590
 	
 	.frame-tutor-form .form-subjects .message-error { width: 100%; }
 	.frame-tutor-form .form-subjects .row-data .input { margin-bottom: 10px; }
+	
+	.frame-tutor .missing-subject .row-data .label { text-align: left; width: 80px; }
+	.frame-tutor .missing-subject .row-data .input { width: 100%; }
 }
 	
 /**************************************

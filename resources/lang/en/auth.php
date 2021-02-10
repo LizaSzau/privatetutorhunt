@@ -13,6 +13,7 @@ return [
     |
     */
 
+	'email' => 'E-mail',
 	'title-login' => 'Login for tutors',
 	'description-login' => 'Login for teachers and tutors for giving lessons for students.',
 	'title-h1-login' => 'Login for tutors',
@@ -28,6 +29,7 @@ return [
 	'title-reset-password' => 'Reset password',
 	'description-reset-password' => 'Reset password for tutors',
 	'title-h1-reset-password' => 'Reset password',
+	'send-reset-link' => 'Send password reset link',
 	
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',

@@ -65,6 +65,7 @@ class RegisterController extends Controller
 				'name' => 'required|string|max:255',
 				'email' => 'required|string|email|max:255',
 				'password' => 'required|string|max:255|min:8',
+				'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
 			]);
 
 			if ($validator->fails()) {
@@ -84,8 +85,9 @@ class RegisterController extends Controller
 				'name' => 'required|string|max:255',
 				'email' => 'required|unique:users|string|email|max:255',
 				'password' => 'required|string|max:255|min:8',
+				'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
 			]);
-
+			
 			if ($validator->fails()) {
 				return redirect('register')
 							->withErrors($validator)

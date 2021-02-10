@@ -8,7 +8,7 @@ use Auth;
 use DB;
 use Carbon\Carbon;
 
-class Tutor_subject_level extends Model
+class TutorSubjectLevel extends Model
 {
     use HasFactory;
 	protected $table = 'tutor_subject_level';

@@ -96,7 +96,7 @@ function validate_title(css_type) {
 		title_div.className = css_type;
 		return false;
 	} else if (value.length < 20) {
-		title_error.innerHTML = 'Please type at leaat 20 characters.'
+		title_error.innerHTML = 'Please type at least 20 characters.'
 		title_div.className = css_type;
 		return false;		
 	} else {

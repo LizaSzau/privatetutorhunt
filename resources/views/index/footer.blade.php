@@ -17,7 +17,7 @@
 			<div><a href="https://vividdarer.eu" target="_blank" class="link-white">powered by VividDarer</a></div>
 		</div>
 		<div class="right">
-			© 2020 All right reserved
+			© {{ now()->year }} All right reserved
 		</div>
 	</div>
 </div>

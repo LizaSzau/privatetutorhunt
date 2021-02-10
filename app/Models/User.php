@@ -56,6 +56,15 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Tutor');
     }
 	
+	public function getAvatarAttribute() {
+		
+		
+		if(@getimagesize($this->attributes['avatar']) !== false) {
+			return $this->attributes['avatar'];
+		}
+		return null;
+	}
+
 //******************************************************************************
 // User and verify_user tables relation
 //******************************************************************************

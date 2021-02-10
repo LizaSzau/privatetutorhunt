@@ -16,4 +16,13 @@ return
 	
 	'title-profile-media' => 'Tutor profile - Media',
 	'description-profile-media' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for media data.',
+	
+	'title-profile-media' => 'Tutor profile - Media',
+	'description-profile-media' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for media data.',
+	
+	'title-profile-subjects' => 'Tutor profile - Subjects',
+	'description-profile-subjects' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for subjects data.',
+	
+	'title-profile-locations' => 'Tutor profile - Locations',
+	'description-profile-locations' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for locations data.',
 ];

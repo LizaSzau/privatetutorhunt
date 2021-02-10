@@ -91,18 +91,19 @@ $css_file = 'profile';
 					</div>
 					
 					<div class="ajax" id="ajax_video"><img src="{{ asset('images/ajax.svg') }}"></div>
-					
+
 					<div id="frame_video" class="frame-video">
 						<div id="video_1">
 						  <iframe id="iframe_1" class="rounded" src="" frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						  <button id="btn_delete_1"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
 						</div>
+
 						<div id="video_2">
 						  <iframe id="iframe_2" class="rounded" src="" frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						  <button id="btn_delete_2"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
 						</div>
 					</div>
-
+					
 					<div class="row-data">
 						<div class="label"></div>
 						<div class="star"></div>

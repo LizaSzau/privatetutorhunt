@@ -1,0 +1,24 @@
+function initMap() {
+	var options = {     
+		zoom: 10,
+		center: { lat: 33.933241, lng: -84.340288 }
+	}
+	var map = new google.maps.Map(document.getElementById('map'), options)
+	var marker = new google.maps.Marker({
+		position: { lat: 33.933241, lng: -84.340288 },
+		map: map
+	})
+}
+
+/*
+(function(document, tag)	{
+	var scriptTag = document.createElement(tag), 
+		firstScriptTag = document.getElementsByTagName(tag)[0]
+		scriptTag.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDvGPAy77REoDVDsTWdIwrjuw2jkS9HiCY&callback=initMap'
+		firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
+}(document, 'script'))
+
+*/
+
+console.log(https://maps.googleapis.com/maps/api/geocode/json?latlng=44.4647452,7.3553838&key=YOUR_API_KEY)
+

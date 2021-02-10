@@ -380,7 +380,7 @@ function check_video_number() {
 	}
 	
 	if (video_number > 0) {
-		document.getElementById('frame_video').style.display = 'block'
+		document.getElementById('frame_video').style.display = 'flex'
 	} else {
 		document.getElementById('frame_video').style.display = 'none'
 	}

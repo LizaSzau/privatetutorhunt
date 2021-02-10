@@ -46,7 +46,7 @@ $css_file = 'profile';
 						<div class="label"><label for="about_you">About you:</label></div>
 						<div class="star">*</div>
 						<div class="input">
-							<textarea id="about" type="text" name="about" maxlength="191" rows="10"placeholder="About you, your teaching style...">{{ (!empty($tutor[0]->about_you) ? $tutor[0]->about_you : '') }}</textarea>
+							<textarea id="about" type="text" name="about" maxlength="2000" rows="10"placeholder="About you, your teaching style...">{{ (!empty($tutor[0]->about_you) ? $tutor[0]->about_you : '') }}</textarea>
 						</div>
 					</div>
 					<div class="hide" id="hide_about"><div role="alert" id="error_about"></div></div>
@@ -55,7 +55,7 @@ $css_file = 'profile';
 						<div class="label"><label for="c_name">Education:</label></div>
 						<div class="star">*</div>
 						<div class="input">
-							<textarea id="education" type="text" name="education" maxlength="191" rows="5"placeholder="Your qualifications and studies.">{{ (!empty($tutor[0]->about_education) ? $tutor[0]->about_education : '') }}</textarea>
+							<textarea id="education" type="text" name="education" maxlength="2000" rows="5"placeholder="Your qualifications and studies.">{{ (!empty($tutor[0]->about_education) ? $tutor[0]->about_education : '') }}</textarea>
 						</div>
 					</div>
 					<div class="hide" id="hide_education"><div role="alert" id="error_education"></div></div>
@@ -64,7 +64,7 @@ $css_file = 'profile';
 						<div class="label"><label for="c_name">Experience:</label></div>
 						<div class="star">*</div>
 						<div class="input">
-							<textarea id="experience" type="text" name="experience" maxlength="191" rows="5"placeholder="Your teaching experience.">{{ (!empty($tutor[0]->about_experience) ? $tutor[0]->about_experience : '') }}</textarea>
+							<textarea id="experience" type="text" name="experience" maxlength="2000" rows="5"placeholder="Your teaching experience.">{{ (!empty($tutor[0]->about_experience) ? $tutor[0]->about_experience : '') }}</textarea>
 						</div>
 					</div>
 					
@@ -92,10 +92,6 @@ $css_file = 'profile';
 </div>
 
 @endsection
-
-
-
-
 
 
 

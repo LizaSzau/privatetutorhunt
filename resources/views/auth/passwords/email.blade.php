@@ -36,7 +36,7 @@ $css_file = 'register';
 		@endif
 
 		<div class="row-data">
-			<div class="label"><label for="email" class="col-md-4 col-form-label text-md-right">E-mail:</label></div>
+			<div class="label"><label for="email" class="col-md-4 col-form-label text-md-right">@lang('auth.email'):</label></div>
 			<div class="input"><input id="email_reset" type="email" class="" name="email" value="{{ old('email') }}" autocomplete="email" autofocus></div>
 		</div>
 		<div class="hide" id="hide_email"><div role="alert" id="error_email"></div></div>
@@ -49,7 +49,7 @@ $css_file = 'register';
 
 		<div class="row-data">
 			<div class="label"></div>
-			<div class="input"><button id="button_submit" class="btn-reset" type="submit">Send password reset link</button></div>
+			<div class="input"><button id="button_submit" class="btn-reset" type="submit">@lang('auth.send-reset-link')</button></div>
 		</div>
 	</div>
 </form>

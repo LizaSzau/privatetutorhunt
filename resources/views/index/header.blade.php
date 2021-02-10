@@ -17,5 +17,4 @@
 		<link rel="icon" href="{{ asset('images/favicon-196.png') }}"  sizes="196x196">
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <link href="{{ asset('css/login-modal.css') }}" rel="stylesheet">
-
     </head>

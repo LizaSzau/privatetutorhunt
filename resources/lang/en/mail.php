@@ -12,7 +12,7 @@ return
 	
 	// Verify users
 	'verify-subject' => 'E-mail address confirmation',	
-	'verify-sear' => 'Dear',
+	'verify-dear' => 'Dear',
 	'verify-message-1' => 'You signed up to our homepage with this e-mail address:',
 	'verify-message-2' => 'To confirm your registration please click on this button.',
 	'verify-message-4' => 'To confirm your registration please click on this link.',

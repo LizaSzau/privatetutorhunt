@@ -48,6 +48,7 @@ a.link-white:hover { text-decoration: underline; }
 .space-20 { height: 20px; width: 100%; }
 .space-30 { height: 30px; width: 100%; }
 .bold { font-weight: bold; }
+.hide { display: none; }
 
 /******************************************************************************
 FORM
@@ -96,7 +97,7 @@ div.content ul { padding-left: 20px; }
 HEADER
 ******************************************************************************/
 
-.header-frame { background: var(--grey-2); overflow: hidden; margin: 0; }
+.header-frame { background-color: var(--grey-2); overflow: hidden; margin: 0; height: 250px; background-image: url('../images/logo.jpg'); background-repeat: no-repeat; background-position: right top; }
 .header-frame .header { width: 1015px; margin: 0 auto; }
 
 /* Logo */
@@ -114,7 +115,6 @@ HEADER
 /* Search box */
 .header-frame .header .search { float: right; width: 400px; padding-top: 33px; padding-bottom: 43px; }
 .header-frame .header .search input { width: 100%; }
-.header-frame .header .search div:nth-child(3) { text-align: right; }
 .header-frame .header .search button { float: right; padding: 0 40px; }
 
 /******************************************************************************
@@ -205,6 +205,21 @@ MAX 960
 **************************************/
 @media (max-width: 960px) { 
 	.header-frame .header .search { width: 100%; }
+}
+
+/**************************************
+MAX 900
+**************************************/
+@media (max-width: 900px) { 
+	.header-frame { background-image: url('../images/logo-small.jpg'); }
+}
+
+/**************************************
+MAX 680
+**************************************/
+@media (max-width: 680px) { 
+	.header-frame { background-image: none; height: auto; }
+	.header-frame .header .logo { margin-bottom: 100px; }
 }
 
 /**************************************

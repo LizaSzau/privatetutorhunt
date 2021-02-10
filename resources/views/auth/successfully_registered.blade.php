@@ -31,7 +31,7 @@ $css_file = 'register';
 
 <div class="message-success">
 	<div>
-		We sent you a letter to confirm your e-mail address<br>Please, check your mail box and click the link in the letter.
+		We sent you a letter to confirm your e-mail address.<br>Please, check your mail box and click the link in the letter.
 	</div>
 </div>
 

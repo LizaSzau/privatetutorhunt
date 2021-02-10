@@ -6,6 +6,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -22,7 +23,7 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', [GuestHomeController::class, 'categoriesListGET'])->name('guest_home');
-Route::get('tutor-subjects-list', [SearchController::class, 'categoriesListGET'])->name('search');
+Route::get('subjects', [SearchController::class, 'categoriesListGET'])->name('search');
 
 Route::get('for-tutors-and-teachers', function() { return view('/info/tutors'); });
 Route::get('terms-of-service', function() { return view('/info/terms'); });
@@ -54,6 +55,7 @@ Route::group(['middleware' => ['auth']], function()
 	Route::get('tutor/profile/images', [PhotoController::class, 'imagesGET']);
 	Route::get('tutor/profile/videos', [VideoController::class, 'videosGET']);
 	Route::get('tutor/profile/subjects', [SubjectController::class, 'subjectsGET']);
+	Route::get('tutor/profile/locations', [LocationController::class, 'locationsGET']);
 	
 	Route::post('tutor/profile/form/contact', [TutorController::class, 'formContactPOST']);
 	Route::post('tutor/profile/form/about', [TutorController::class, 'formAboutPOST']);
@@ -63,5 +65,6 @@ Route::group(['middleware' => ['auth']], function()
 	Route::post('tutor/profile/form/media/video/delete', [VideoController::class, 'videoDeletePOST']);
 	Route::post('tutor/profile/form/subjects/upload', [SubjectController::class, 'formSubjectUploadPOST']);
 	Route::post('tutor/profile/form/subjects/delete', [SubjectController::class, 'formSubjectDeletePOST']);
+	Route::post('tutor/profile/form/subjects/missing', [SubjectController::class, 'formSubjectMissingPOST']);
 
 });

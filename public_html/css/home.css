@@ -4,7 +4,7 @@
 .categ-flex-frame .color { position: absolute;  top: 0; left: 0; width: 100%; height: 100%; padding: 15px 15px 20px 20px; overflow: hidden;  }
 .categ-flex-frame .color .categ h2 { color: var(--white); font-family: 'avenir-bold'; font-size: 26px; overflow: hidden; }
 .categ-flex-frame .color .subjects{ position: absolute; bottom: 0; right: 0; white-space: nowrap;  max-width: 100%; text-align: right; padding: 20px;  }
-.categ-flex-frame .color .subjects h3 { color: var(--white); font-size: 24px; font-weight: normal;  overflow: hidden; text-overflow: ellipsis; }
+.categ-flex-frame .color .subjects h3 { color: var(--white); font-family: 'montserrat'; font-size: 22px; font-weight: 100 !important;  overflow: hidden; text-overflow: ellipsis; }
 
 .categ-flex-frame .tile:first-of-type { border-top-left-radius: 10px; -moz-border-top-left-radius: 10px; -webkit-border-top-left-radius: 10px; }
 .categ-flex-frame .color:first-of-type { border-top-left-radius: 10px; -moz-border-top-left-radius: 10px; -webkit-border-top-left-radius: 10px; }
