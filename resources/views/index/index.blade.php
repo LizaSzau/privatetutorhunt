@@ -5,7 +5,6 @@
 		<div class="header-frame">
 			<div class="header">
 				@include('index/logo')
-				@include('index/search')
 			</div>
 		</div>	
 		

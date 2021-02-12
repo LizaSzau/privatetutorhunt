@@ -41,7 +41,7 @@ function call_ajax_profile(data) {
 		document.getElementById('btn_form').style.display = 'block'
 	})
 	.catch(function(error) {
-		 console.log(error);
+		 // console.log(error);
 	});
 }
 

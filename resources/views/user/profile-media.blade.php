@@ -37,15 +37,17 @@ $css_file = 'profile';
 			
 			<div class="content">
 				<h3>Images</h3>
-				<ul>
-					<li>You can upload maximum 5 images.</li>
-					<li>Accepted file type: JPG</li>
-					<li>Maximum file size: 8MB</li>
-					<li>Please upload at least one image.</li>
-					<li>The first photo is your profile image</li>
-					<li>After uploading you can order the images by drag and drop.</li>
-					<li>You can delete an image by dragging out.</li>
-				</ul>
+				<div class="info rounded">
+					<ul>
+						<li>You can upload maximum 5 images.</li>
+						<li>Accepted file type: JPG</li>
+						<li>Maximum file size: 8MB</li>
+						<li>Please upload at least one image.</li>
+						<li>The first photo is your profile image</li>
+						<li>After uploading you can order the images by drag and drop.</li>
+						<li>You can delete an image by dragging out.</li>
+					</ul>
+				</div>
 			</div>
 	
 			<div id="frame_image_upload">

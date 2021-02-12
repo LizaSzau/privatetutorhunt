@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth']], function()
 	Route::get('tutor/profile/images', [PhotoController::class, 'imagesGET']);
 	Route::get('tutor/profile/videos', [VideoController::class, 'videosGET']);
 	Route::get('tutor/profile/subjects', [SubjectController::class, 'subjectsGET']);
-	Route::get('tutor/profile/locations', [LocationController::class, 'locationsGET']);
+	Route::get('tutor/profile/location', [LocationController::class, 'locationGET']);
 	
 	Route::post('tutor/profile/form/contact', [TutorController::class, 'formContactPOST']);
 	Route::post('tutor/profile/form/about', [TutorController::class, 'formAboutPOST']);
@@ -66,5 +66,5 @@ Route::group(['middleware' => ['auth']], function()
 	Route::post('tutor/profile/form/subjects/upload', [SubjectController::class, 'formSubjectUploadPOST']);
 	Route::post('tutor/profile/form/subjects/delete', [SubjectController::class, 'formSubjectDeletePOST']);
 	Route::post('tutor/profile/form/subjects/missing', [SubjectController::class, 'formSubjectMissingPOST']);
-
+	Route::post('tutor/profile/form/location', [LocationController::class, 'formLocationPOST']);
 });

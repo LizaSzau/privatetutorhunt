@@ -34,9 +34,11 @@ $css_file = 'profile';
 			<hr class="blue-light">
 
 			<div class="content">
-				<ul>
-					<li>Please upload at least one subject.</li>
-				</ul>
+				<div class="info rounded">
+					<ul>
+						<li>Please upload at least one subject.</li>
+					</ul>
+				</div>
 			</div>
 			
 			<form name="form_profile" id="form_profile"  onsubmit="return validate_form()" novalidate>
@@ -148,7 +150,7 @@ $css_file = 'profile';
 					<div class="star"></div>
 					<div class="input buttons subject">
 						<div>
-							<a href="{{ url('/tutor/profile/locations') }}">
+							<a href="{{ url('/tutor/profile/location') }}">
 								<div id="btn_form_next" class="btn-next rounded">Next step</div>
 							</a>
 						</div>

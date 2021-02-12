@@ -13,7 +13,7 @@
 .frame-tutor-form { width: 100%; padding-left: 40px; }
 .frame-tutor-form .form { width: 540px; margin: 0 auto; }
 .frame-tutor-form input[type=checkbox] { height: 24px; width: 24px;}
-.frame-tutor-form hr { margin-bottom: 30px; }
+.frame-tutor-form hr { margin-bottom: 40px; }
 .frame-tutor-form .row-data { height: 40px; margin-bottom: 20px; }
 .frame-tutor-form .row-data .label { float: left; text-align: right; padding-right: 10px; min-height: 30px; width: 100px; line-height: 40px; }
 .frame-tutor-form .row-data .label.left { text-align: left; }
@@ -99,8 +99,13 @@
 .frame-tutor .missing-subject .subjects-list { color: var(--blue-dark); font-weight: bold; margin: 40px 0 10px 0; }
 .frame-tutor .missing-subject ul { margin-left: 40px; }
 
-.frame-tutor #map { height: 400px; width: 100%; background: pink; }
-
+.frame-tutor-form .location #map { height: 300px; background: url('../images/map.jpg') no-repeat center;  border: 0; transition: none;  }
+.frame-tutor-form .location .div-check-address { overflow: auto; margin: 0 20px; text-align: right; }
+.frame-tutor-form .location .btn-warning { display: inline-block; background: var(--yellow); color: var(--white); line-height: 40px; width: 180px; text-align: center; margin-top: 0; border: 0; cursor: pointer; border-radius: 10px; -moz-border-radius: 10px;  -webkit-border-radius: 10px; }
+.frame-tutor-form .location .btn-warning:hover { background: var(--blue-light); }
+.frame-tutor-form .location .row-map { min-height: 300px; height: 300px; overflow: visible; }
+.frame-tutor-form .location .row-check { overflow: hidden; height: 45px; border: 1px solid var(--grey-1); }
+	
 /********************************************************************************
 MEDIA
 ********************************************************************************/
@@ -161,6 +166,11 @@ MAX 590
 	
 	.frame-tutor .missing-subject .row-data .label { text-align: left; width: 80px; }
 	.frame-tutor .missing-subject .row-data .input { width: 100%; }
+	
+	.frame-tutor-form .location #map { width: 100%; margin: 0; padding: 0; }
+	.frame-tutor-form .location .div-check-address { overflow: auto; margin: 0; }
+	.frame-tutor-form .location .row-map { overflow:  hidden; }
+	.frame-tutor-form .location .row-check { margin: 0; padding: 0;}
 }
 	
 /**************************************
