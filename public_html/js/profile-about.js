@@ -1,3 +1,16 @@
+//-----------------------------------------------------------------------------
+// Scroll to the form
+//-----------------------------------------------------------------------------
+
+window.onload = function(e){ 
+	const node = document.getElementById('top_form')
+	
+	window.scrollTo({
+	  top: node.offsetTop - 70,
+	  behavior: 'smooth',
+	})
+}
+
 //------------------------------------------------------------------------------
 // Ajax
 //------------------------------------------------------------------------------
@@ -6,7 +19,7 @@ function call_ajax_profile(data) {
 	document.getElementById('btn_form').style.display = 'none'
 	document.getElementById('btn_form_next').style.display = 'none'
 	
-	let url = 'form/about'
+	let url = 'form/about/upload'
 	let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 	fetch(url, {

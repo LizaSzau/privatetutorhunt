@@ -8,6 +8,9 @@ return
 	'title-profile' => 'Tutor profile',
 	'description-profile' => 'Tutors and teachers create their tutor profiles in order to teaching students.',
 	
+	'title-profile-welcome' => 'Tutor profile',
+	'description-profile-welcome' => 'Tutors and teachers create their tutor profiles in order to teaching students.',
+	
 	'title-profile-contact' => 'Tutor profile - Contact',
 	'description-profile-contact' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for contact data.',
 	
@@ -25,4 +28,7 @@ return
 	
 	'title-profile-locations' => 'Tutor profile - Locations',
 	'description-profile-locations' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for locations data.',
+	
+	'title-profile-details' => 'Tutor profile - Details',
+	'description-profile-details' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for details data.',
 ];

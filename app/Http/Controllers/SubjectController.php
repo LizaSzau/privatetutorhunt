@@ -31,7 +31,7 @@ class SubjectController extends Controller
 // Select subjects for adding to profile
 //------------------------------------------------------------------------------
 
-	public function subjectsGet()
+	public function formSubjectsGET()
 	{  
 		$tutor = User::find(Auth::id())->tutor;
 		$tutor_ready = Tutor::find($tutor->id)->tutorReady;

@@ -3,6 +3,19 @@ let image_max = 5
 let video_number = document.getElementById('video_number').value
 let video_max = 2
 
+//-----------------------------------------------------------------------------
+// Scroll to the form
+//-----------------------------------------------------------------------------
+
+window.onload = function(e){ 
+	const node = document.getElementById('top_form')
+	
+	window.scrollTo({
+	  top: node.offsetTop - 70,
+	  behavior: 'smooth',
+	})
+}
+
 //------------------------------------------------------------------------------
 // Get uploaded images
 //------------------------------------------------------------------------------
@@ -84,6 +97,7 @@ function photo_order() {
 		.then(response => response.json())
 		.then(data => {
 			//console.log(data.success)
+			document.getElementById('btn_form_next').style.display = 'block'	
 		})
 		.catch(function(error) {
 			//console.log(error)
@@ -244,23 +258,27 @@ btn_delete_2.addEventListener('click', function(e) {
 
 const get_videos = async () => {
 	document.getElementById('ajax_video').style.display = 'block'
+	document.getElementById('frame_video').style.display = 'none'
 	let url  = 'videos'
 
 	await fetch(url)
 		.then(response => response.json())
 		.then(data => { 
-			let actual_video = 1;
+			let actual_video = 2;
 			for (var key in data.data.videos) { 
 				document.getElementById('iframe_' + actual_video).src = 'https://www.youtube.com/embed/' + data.data.videos[key].name
 				document.getElementById('btn_delete_' + actual_video).setAttribute('video_id', data.data.videos[key].id)
 				document.getElementById('video_' + actual_video).style.display = 'block'
-				actual_video++
+				actual_video--
 			} 
+			
 			document.getElementById('ajax_video').style.display = 'none'
+			document.getElementById('frame_video').style.display = 'block'
 		})
 		.catch(function(error) {
 			 //console.log(error)
 			 document.getElementById('ajax_video').style.display = 'none'
+			 document.getElementById('frame_video').style.display = 'block'
 		});
 }
 
@@ -291,6 +309,7 @@ function delete_video(video_id, actual_video) {
 			document.getElementById('iframe_' + actual_video).src = ''
 			document.getElementById('btn_delete_' + actual_video).setAttribute('video_id', 0)
 			document.getElementById('video_' + actual_video).style.display = 'none'
+			document.getElementById('btn_form_next').style.display = 'block'	
 			
 			video_number--
 			check_video_number()
@@ -355,6 +374,7 @@ function upload_video(video_id) {
 			document.getElementById('iframe_' + actual_video).src = 'https://www.youtube.com/embed/' + video_id
 			document.getElementById('btn_delete_' + actual_video).setAttribute('video_id', data.id)
 			document.getElementById('video_' + actual_video).style.display = 'block'
+			document.getElementById('btn_form_next').style.display = 'block'	
 			
 			video_number++
 			check_video_number()

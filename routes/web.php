@@ -49,16 +49,18 @@ Route::get('registration/verify-email-failed', function() { return view('/auth/v
 Route::group(['middleware' => ['auth']], function() 
 {
 	Route::get('tutor/dashboard', function() { return view('/user/dashboard'); })->name('user_home');
+	Route::get('tutor/profile/welcome', [TutorController::class, 'welcomeGET']);
 	Route::get('tutor/profile/contact', [TutorController::class, 'formContactGET']);
 	Route::get('tutor/profile/about', [TutorController::class, 'formAboutGET']);
 	Route::get('tutor/profile/media', [TutorController::class, 'formMediaGET']);
-	Route::get('tutor/profile/images', [PhotoController::class, 'imagesGET']);
-	Route::get('tutor/profile/videos', [VideoController::class, 'videosGET']);
-	Route::get('tutor/profile/subjects', [SubjectController::class, 'subjectsGET']);
-	Route::get('tutor/profile/location', [LocationController::class, 'locationGET']);
+	Route::get('tutor/profile/images', [PhotoController::class, 'formImagesGET']);
+	Route::get('tutor/profile/videos', [VideoController::class, 'formVideosGET']);
+	Route::get('tutor/profile/subjects', [SubjectController::class, 'formSubjectsGET']);
+	Route::get('tutor/profile/locations', [LocationController::class, 'formLocationGET']);
+	Route::get('tutor/profile/details', [TutorController::class, 'formDetailGET']);
 	
-	Route::post('tutor/profile/form/contact', [TutorController::class, 'formContactPOST']);
-	Route::post('tutor/profile/form/about', [TutorController::class, 'formAboutPOST']);
+	Route::post('tutor/profile/form/contact/upload', [TutorController::class, 'formContactUploadPOST']);
+	Route::post('tutor/profile/form/about/upload', [TutorController::class, 'formAboutUploadPOST']);
 	Route::post('tutor/profile/form/media/photo/upload', [PhotoController::class, 'formPhotoUploadPOST']);
 	Route::post('tutor/profile/form/media/photo/order-delete', [PhotoController::class, 'photoOrderDeletePOST']);
 	Route::post('tutor/profile/form/media/video/upload', [VideoController::class, 'formVideoUploadPOST']);
@@ -66,5 +68,7 @@ Route::group(['middleware' => ['auth']], function()
 	Route::post('tutor/profile/form/subjects/upload', [SubjectController::class, 'formSubjectUploadPOST']);
 	Route::post('tutor/profile/form/subjects/delete', [SubjectController::class, 'formSubjectDeletePOST']);
 	Route::post('tutor/profile/form/subjects/missing', [SubjectController::class, 'formSubjectMissingPOST']);
-	Route::post('tutor/profile/form/location', [LocationController::class, 'formLocationPOST']);
+	Route::post('tutor/profile/form/locations/upload', [LocationController::class, 'formLocationUploadPOST']);
+	Route::post('tutor/profile/form/locations/delete', [LocationController::class, 'formLocationDeletePOST']);
+	Route::post('tutor/profile/form/details/upload', [TutorController::class, 'formDetailsUploadPOST']);
 });

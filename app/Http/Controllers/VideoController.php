@@ -24,7 +24,7 @@ class VideoController extends Controller
 // Select videos for editing
 //------------------------------------------------------------------------------
 
-	public function videosGet()
+	public function formVideosGET()
 	{  
 		$video = new Video;
 		

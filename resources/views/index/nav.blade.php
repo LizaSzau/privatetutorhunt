@@ -42,7 +42,7 @@
 					<div class="user-menu-items collapsible collapsed">
 						<div class="border"></div>
 						<a href="{{ url('/tutor/dashboard') }}" @if(Route::current()->getName() == 'user_home') class="active" @endif alt="Dashboard">Info</a>	
-						<a href="{{ url('/tutor/profile/contact') }}" @if(Route::current()->getName() == 'user_profile_contact') class="active" @endif alt="Your profile">Your profile</a>
+						<a href="{{ url('/tutor/profile/welcome') }}" @if(Route::current()->getName() == 'user_profile_contact') class="active" @endif alt="Your profile">Your profile</a>
 						<a href="#">Activities</a>
 						<a href="#">Personal data</a>
 						<a>

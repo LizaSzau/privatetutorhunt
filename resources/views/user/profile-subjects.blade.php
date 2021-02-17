@@ -30,7 +30,7 @@ $css_file = 'profile';
 	@include('user/profile-menu')  
 	<div class="frame-tutor-form">
 		<div id="form_subjects" class="form-subjects">
-			<h2>SUBJECTS</h2>
+			<h2 id="top_form">SUBJECTS</h2>
 			<hr class="blue-light">
 
 			<div class="content">
@@ -80,24 +80,32 @@ $css_file = 'profile';
 					</div>
 			
 					<div class="row-data">
-						<div class="label"></div>
-						<div class="star"></div>
+						<div class="label empty"></div>
+						<div class="star empty"></div>
 						<div class="input buttons add">
 							<div><button id="btn_add">Add</button></div>
 						</div>
 					</div>
 					
 					<h3>Selected subjects:</h3>
-					
-					<div id="tutor_subjects">	
-						@foreach($subjects as $subject)
-							<div id="{{ $subject->subject_id }}_{{ $subject->level_id }}">
-								<button onclick="delete_item('{{ $subject->subject_id }}_{{ $subject->level_id }}')"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
-								<span class="subject">{{ $subject->name }}</span> - {{ $subject->level }}
-							</div>
-						@endforeach
-					</div>
-					
+					@if(count($subjects) == 0) 
+						You haven't uploaded any subjects yet.
+					@else
+						<div id="tutor_subjects">	
+							@foreach($subjects as $subject)
+								<div id="{{ $subject->subject_id }}_{{ $subject->level_id }}" class="subject-flex">
+									<div>
+										<button onclick="delete_item('{{ $subject->subject_id }}_{{ $subject->level_id }}')">
+											<img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete">
+										</button>
+									</div>
+									<div>
+										<span class="subject">{{ $subject->name }}</span> - {{ $subject->level }}
+									</div>
+								</div>
+							@endforeach
+						</div>
+					@endif
 					<div class="hide" id="hide_delete"><div role="alert" id="error_delete"></div></div>
 				</div>
 				
@@ -109,9 +117,12 @@ $css_file = 'profile';
 						<h3>Missing subjects</h3>
 						Isn't your subject included in the list?
 					</div>
-					<div class="info">
-						You can suggest up to 3 subjects at a time.
-						<br>We will review your suggestion  within 24 hours and notify you by email.</br>
+					
+					<div class="content">
+						<div class="info rounded">
+							You can suggest up to 3 subjects at a time.
+							<br>We will review your suggestion  within 24 hours and notify you by email.
+						</div>
 					</div>
 					<div id="missing">
 						<form name="form_missing" id="form_missing" onsubmit="return validate_form_missing()" novalidate>
@@ -135,7 +146,7 @@ $css_file = 'profile';
 							</div>
 						</form>
 					</div>	
-					<div id="suggested_subjects" class="hide">
+					<div id="suggested_subjects" class="hide content">
 						<div class="subjects-list">Suggested subjects:</div>
 						<ul id="subjects_list">
 							@foreach($new_subjects as $new_subject)
@@ -163,22 +174,3 @@ $css_file = 'profile';
 </div>
 
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 <div class="top">
 	<div>
 		<div class="left">
-			<a href="{{ url('/for-tutors-and-teachers') }}" class="link-white">for tutors</a>
+			<a href="{{ url('/for-tutors-and-teachers') }}" class="link-white slim">for tutors</a>
 			<br><a href="{{ url('/contact') }}" class="link-white">contact</a>
 		</div>
 		<div class="right">

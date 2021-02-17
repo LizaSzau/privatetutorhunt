@@ -27,4 +27,9 @@ class Tutor extends Model
     {
         return $this->hasOne('App\Models\TutorReady');
     }
+	
+    public function locations()
+    {
+        return $this->hasMany('App\Models\Location');
+    }
 }

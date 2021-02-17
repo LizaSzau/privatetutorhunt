@@ -17,7 +17,7 @@ class Photo extends Model
     ];
 	
 	protected $table = 'photos';
-	private $tutor_id;
+	protected $tutor_id;
 	private $image_large = 1024;
 	private $image_small = 200;
 	private $image_number = 5;
@@ -33,7 +33,7 @@ class Photo extends Model
     }
 	
 //------------------------------------------------------------------------------
-// One to many relation between property and photos table
+// One to many relation between tutors and photos table
 //------------------------------------------------------------------------------
 
 	public function tutor()

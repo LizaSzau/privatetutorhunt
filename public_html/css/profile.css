@@ -1,9 +1,9 @@
 .frame-tutor { display: flex; }
 .frame-tutor .ajax img { margin-left: 120px; }
-.frame-tutor-status .status-item { display: flex; height: 42px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; margin-bottom: 5px; overflow: hidden; width: 180px;}
+.frame-tutor-status .status-item { display: flex; height: 42px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin-bottom: 5px; overflow: hidden; width: 180px;}
 .frame-tutor-status .status-item div {  background: var(--blue-dark); color: var(--white); padding: 0 ; }
 .frame-tutor-status .status-item div:first-of-type { width: 130px; line-height: 42px; cursor: pointer; }
-.frame-tutor-status .status-item div:first-of-type:hover { background: var(--blue-medium); color: var(--white); }
+.frame-tutor-status .status-item div:first-of-type:hover { background: var(--blue-dark-dark); color: var(--white); }
 .frame-tutor-status .status-item div:nth-child(2) { background: var(--grey-2); padding: 0 20px; }
 .frame-tutor-status .status-item div.active { background: var(--green); }
 .frame-tutor-status a  { display: block; margin: 0; width: 100%; padding: 0 20px; }
@@ -23,11 +23,11 @@
 .frame-tutor-form .row-data:last-child  .input{ text-align: right; }
 .frame-tutor-form .row-data.checkbox { height: 24px; }
 .frame-tutor-form .row-data.checkbox .input div:first-of-type { float: left; width: 40px; text-align: left; }
-.frame-tutor-form .row-data.checkbox .input div:last-of-type { float: left; width: 360px; text-align: left; }
+.frame-tutor-form .row-data.checkbox .input div:last-of-type { float: left; width: 360px; text-align: left; padding-top: 2px; }
 .frame-tutor-form .row-data .input.buttons { display: flex; justify-content: space-between; }
 .frame-tutor-form .row-data .input.buttons div:first-of-type { order: 2; }
 .frame-tutor-form input { margin: 0; width: 100%; }
-.frame-tutor-form textarea { margin: 0 0 10px 0; width: 100%; }
+.frame-tutor-form textarea { margin: 0; width: 100%; }
 
 .frame-tutor-form .row-data .input.phone > div { width: 30px; float: left; line-height: 40px; text-align: center; } 
 .frame-tutor-form .row-data input.phone-area { width: 100px; float: left; } 
@@ -42,10 +42,10 @@
 
 .frame-tutor-form .btn-next { color: var(--white); text-align: center; width: 180px;  height: 40px; line-height: 40px; padding: 0 20px; margin-top: 10px; 
 	border: 0; cursor: pointer; background: var(--green); display: none; }
-.frame-tutor-form .btn-next:hover { background: var(--blue-light); }
+.frame-tutor-form .btn-next:hover { background: var(--green-dark); }
 
 .frame-error-image { width: 540px; margin: 0 auto 20px auto; padding-right: 20px; } 
-.message-error-image { width: 100%; overflow: auto; background: var(--red);  padding: 10px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;}
+.message-error-image { width: 100%; overflow: auto; background: var(--red);  padding: 10px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
 .message-error-image div { color: var(--white); }
 
 .frame-drop { width: 540px; margin: 0 auto 20px auto; padding-right: 20px; }
@@ -65,32 +65,36 @@
 .frame-tutor-form .row-data .input.buttons.add { display: block; }
 .frame-tutor-form .input.buttons.video .btn-next { float: right; }
 
-.frame-video { display: flex; width: 540px; margin: 40px auto; padding: 20px 20px 0 0; justify-content: space-between; flex-direction: row-reverse; }
+.frame-video { display: flex; width: 540px; margin: 20px auto; padding: 20px 20px 0 0; justify-content: space-between; flex-direction: row-reverse; }
 .frame-video > div { position: relative; width: calc(50% - 5px); overflow: hidden; display: none; }
 .frame-video > div iframe{width: 100%; max-width: 100%; }
 .frame-video > div button { position: absolute; right: 0; z-index: 9999; background: var(--red); color: var(--white); width: 40px; margin: 0;  padding: 0; 
-		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-top-right-radius: 10px; -moz-border-top-right-radius: 10px; -webkit-border-top-right-radius: 10px;
-		border-bottom-left-radius: 10px; -moz-border-bottom-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; }
+		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-top-right-radius: 5px; -moz-border-top-right-radius: 5px; -webkit-border-top-right-radius: 5px;
+		border-bottom-left-radius: 5px; -moz-border-bottom-left-radius: 5px; -webkit-border-bottom-left-radius: 5px; }
 .frame-video > div button:hover { background: var(--red-dark); }
 
 #ajax_video { width: 540px; margin-top: 40px; }
 #ajax_video img { width: 100%; margin: 0; }
 
-.frame-tutor-form .form-subjects .category-name { color: var(--white); background: var(--blue-dark); font-w+: bold;  }
+.frame-tutor-form .form-about { overflow: auto; }
+.frame-tutor-form .form-about .row-data { height: auto; overflow: auto; }
+
+.frame-tutor-form .form-subjects .category-name { color: var(--white); background: var(--blue-dark); font-weight: bold;  }
 .frame-tutor-form .form-subjects select:active { outline: none; background: var(--white); }
 .frame-tutor-form .form-subjects .option { line-height: 40px; }
+.frame-tutor-form .form-subjects .subject-flex { display: flex; align-items: center; }
 .frame-tutor-form .form-subjects #btn_form { float: right; }
 .frame-tutor-form .form-subjects h3 { padding-top: 40px; }
 .frame-tutor-form .form-subjects #tutor_subjects { padding-top: 10px; }
-.frame-tutor-form .form-subjects #tutor_subjects span.subject{ padding-left: 20px; font-weight: bold; color: var(--blue-light); }
-.frame-tutor-form .form-subjects #tutor_subjects div { line-height: 40px; padding: 5px 0;  }
-.frame-tutor-form .form-subjects #tutor_subjects div button { background: var(--red); padding: 0; float: left; margin: 0; width: 40px; }
+.frame-tutor-form .form-subjects #tutor_subjects span.subject{ font-weight: bold; color: var(--blue-light); }
+.frame-tutor-form .form-subjects #tutor_subjects div { padding: 5px 0;  }
+.frame-tutor-form .form-subjects #tutor_subjects div button { background: var(--red); padding: 0; float: left; margin: 0 20px 0 0; width: 40px; }
 .frame-tutor-form .form-subjects #tutor_subjects div button:hover { background: var(--red-dark); }
 .frame-tutor-form .form-subjects .message-error { width: calc(100% - 20px); margin: 20px 20px 20px 0; }
 .frame-tutor-form .input.buttons.subject { display: block; }
 .frame-tutor-form .input.buttons.subject .btn-next { float: right; margin-top: 20px; }
 
-.frame-tutor .missing-subject { background: var(--grey-2); margin: 30px 20px 0 0; padding: 20px; overflow: hidden; }
+.frame-tutor .missing-subject { background: var(--grey-2); margin: 30px 20px 10px 0; padding: 20px; overflow: hidden; }
 .frame-tutor .missing-subject h3 { padding-top: 0; }
 .frame-tutor .missing-subject .question { color: var(--blue-dark); font-weight: bold; }
 .frame-tutor .missing-subject .info { margin: 20px 0; }
@@ -99,13 +103,28 @@
 .frame-tutor .missing-subject .subjects-list { color: var(--blue-dark); font-weight: bold; margin: 40px 0 10px 0; }
 .frame-tutor .missing-subject ul { margin-left: 40px; }
 
-.frame-tutor-form .location #map { height: 300px; background: url('../images/map.jpg') no-repeat center;  border: 0; transition: none;  }
-.frame-tutor-form .location .div-check-address { overflow: auto; margin: 0 20px; text-align: right; }
-.frame-tutor-form .location .btn-warning { display: inline-block; background: var(--yellow); color: var(--white); line-height: 40px; width: 180px; text-align: center; margin-top: 0; border: 0; cursor: pointer; border-radius: 10px; -moz-border-radius: 10px;  -webkit-border-radius: 10px; }
-.frame-tutor-form .location .btn-warning:hover { background: var(--blue-light); }
-.frame-tutor-form .location .row-map { min-height: 300px; height: 300px; overflow: visible; }
-.frame-tutor-form .location .row-check { overflow: hidden; height: 45px; border: 1px solid var(--grey-1); }
-	
+.frame-tutor-form .location .address-flex { display: flex; align-items: center; margin-bottom: 10px; }
+.frame-tutor-form .location #hide_max { margin-bottom: 40px; }
+.frame-tutor-form .location #tutor_locations { padding-top: 10px; }
+.frame-tutor-form .location #tutor_locations .address { margin-left: 20px; }
+.frame-tutor-form .location #tutor_locations div button.btn-delete { background: var(--red); padding: 0; float: left; margin: 0; width: 40px; }
+.frame-tutor-form .location #tutor_locations div button.btn-delete:hover { background: var(--red-dark); }
+.frame-tutor-form .location #tutor_locations div button.btn-map { background: var(--blue-light); padding: 0; float: left; margin: 0 0 0 20px; width: 40px; }
+.frame-tutor-form .location #tutor_locations div button.btn-map:hover { background: var(--blue-light-dark); }
+.frame-tutor-form .location .btn-next { float: right; margin-top: 20px; }
+.frame-tutor-form .location .ajax { margin-top: 0; }
+.frame-tutor-form .location .map-hide { height: 0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background: var(--grey-2);  transition: height ease 1; }
+.frame-tutor-form .location .map-show { height: 200px; margin: 0 20px 20px 0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background: var(--grey-2); transition: height ease 1s; }
+
+.frame-tutor-form .form-details h3 { margin: 40px 0 10px 0; }
+.frame-tutor-form .form-details .row-data.checkbox { margin-bottom: 10px;}
+.frame-tutor-form .form-details .row-data.checkbox .label { font-weight: bold; color: var(--blue-dark); height: 24px; line-height: 24px; }
+.frame-tutor-form .form-details .row-data.checkbox .star { height: 24px; line-height: 24px; }
+.frame-tutor-form .form-details .input.short { display: flex; }
+.frame-tutor-form .form-details .input.short input { width: 100px; }
+.frame-tutor-form .form-details .input.short div:last-child { line-height: 40px; margin-left: 20px; }
+.frame-tutor-form .form-details .row-data { height: auto; overflow: auto; }
+
 /********************************************************************************
 MEDIA
 ********************************************************************************/
@@ -132,10 +151,10 @@ MAX 720
 MAX 590
 **************************************/
 @media (max-width: 590px) { 
-	
 	.frame-tutor .ajax { width: 100%; text-align: center; overflow: hidden; }
 	.frame-tutor .ajax img { margin-left: 0; width: 100%; max-width: 100%; margin-top: 20px; }
 	.frame-tutor-form .form { width: 100%; }
+	.frame-tutor-form .row-data .empty { display: none;  }
 	.frame-tutor-form .row-data:last-child .label { display: none; }
 	.frame-tutor-form .row-data:last-child .star { display: none; }
 	.frame-tutor-form .hide-field { display: none; }
@@ -144,13 +163,17 @@ MAX 590
 	.frame-tutor-form .row-data.checkbox .star { display: none; }
 	.frame-tutor-form .row-data.checkbox { height: auto; padding: 0; margin: 0; }
 	.frame-tutor-form { padding-left: 0; overflow: auto; }
-	.frame-tutor-form .row-data .label { text-align: left; }
+	.frame-tutor-form .row-data .label { text-align: left; width: auto; }
 	.frame-tutor-form .row-data input.phone-number { width: calc(100% - 130px); }
 	.frame-tutor-form .row-data.checkbox .input div:last-of-type {  width: calc(100% - 40px); }
 	.frame-tutor-form .hide { width: 100%; margin-left: 0; }
 	.frame-tutor-form .message-error { width: 100%; margin-left: 0; }
 	.frame-tutor-form .message-warning { width: 100%; margin-left: 0; }
 	.frame-tutor-form .message-success { width: 100%; margin-left: 0; }
+	
+	.frame-tutor-form .form-about { overflow: auto; }
+	.frame-tutor-form .form-about .row-data { margin: 0; }
+
 	.frame-drop { width: 100%; padding-right: 0; }
 	.error-image { width: 100%; padding-right: 0; }
 	#photos { width: 100%; }
@@ -164,6 +187,7 @@ MAX 590
 	.frame-tutor-form .form-subjects .message-error { width: 100%; }
 	.frame-tutor-form .form-subjects .row-data .input { margin-bottom: 10px; }
 	
+	.frame-tutor .missing-subject { margin-right: 0; }
 	.frame-tutor .missing-subject .row-data .label { text-align: left; width: 80px; }
 	.frame-tutor .missing-subject .row-data .input { width: 100%; }
 	
@@ -171,6 +195,11 @@ MAX 590
 	.frame-tutor-form .location .div-check-address { overflow: auto; margin: 0; }
 	.frame-tutor-form .location .row-map { overflow:  hidden; }
 	.frame-tutor-form .location .row-check { margin: 0; padding: 0;}
+	
+	.frame-tutor-form .form-details .row-data { margin: 0; }
+	.frame-tutor-form .form-details .row-data.chb-title .label { display: block; }
+	.frame-tutor-form .form-details .row-data.chb-title .star { display: block; }
+	.frame-tutor-form .form-details .row-data.checkbox { margin: 0; }
 }
 	
 /**************************************
@@ -184,6 +213,7 @@ MAX 500
 MAX 450
 **************************************/
 @media (max-width: 450px) { 
+	.frame-tutor-form .row-data .input.buttons > div { overflow: auto; width: 100%; }
 	.frame-tutor-form .row-data .input.buttons { display: block; }
 	.frame-tutor-form .btn-next { float: right; }
 }

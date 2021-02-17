@@ -31,7 +31,7 @@
 .login .modal-flex .right :-ms-input-placeholder { color: var(--grey-3);  }
 .login .modal-flex .right ::-ms-input-placeholder { color: var(--grey-3);  }
 
-.login .bottom { background: var(--blue-dark); margin-top: 20px; overflow: auto; padding: 10px 0; border-radius: 10px; -moz-border-radius: 10px;  -webkit-border-radius: 10px;}
+.login .bottom { background: var(--blue-dark); margin-top: 20px; overflow: auto; padding: 10px 0; border-radius: 5px; -moz-border-radius: 5px;  -webkit-border-radius: 5px;}
 .login .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
 .login .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
 .login .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }

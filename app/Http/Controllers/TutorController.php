@@ -15,6 +15,21 @@ class TutorController extends Controller
 {
 	
 //******************************************************************************
+// welcometGET
+//******************************************************************************
+
+	public function welcomeGET() {
+		$tutor = User::find(Auth::id())->tutor;
+		$tutor_ready = Tutor::find($tutor->id)->tutorReady;
+		
+		$data = array(
+			'tutor_ready' => $tutor_ready
+		);
+		
+		return view('user.profile-welcome')->with($data);
+	}
+	
+//******************************************************************************
 // formContactGET
 //******************************************************************************
 
@@ -85,10 +100,30 @@ class TutorController extends Controller
 	}
 	
 //******************************************************************************
-// formContactPOST
+// formDetailsGET
 //******************************************************************************
 
-	public function formContactPOST(Request $request) {
+	public function formDetailGET() {
+		$tutor = DB::table('tutors')
+			->select('id', 'where_online', 'where_tutor_place', 'where_student_place', 'when_morning', 'when_afternoon', 'when_evening', 'when_weekend', 'fee', 'comment')
+			->where('user_id', '=', Auth::id())
+			->get();
+			
+		$tutor_ready = Tutor::find($tutor[0]->id)->tutorReady;
+		
+		$data = array(
+			'tutor' => $tutor,
+			'tutor_ready' => $tutor_ready
+		);
+			
+		return view('user.profile-details')->with($data);
+	}
+	
+//******************************************************************************
+// formContactUploadPOST
+//******************************************************************************
+
+	public function formContactUploadPOST(Request $request) {
 		
 		$validator = Validator::make($request->all(), [
 			'name' => 'required|min:5|max:191',
@@ -131,10 +166,10 @@ class TutorController extends Controller
 	}
 	
 //******************************************************************************
-// formAboutPOST
+// formAboutUploadPOST
 //******************************************************************************
 
-	public function formAboutPOST(Request $request) {
+	public function formAboutUploadPOST(Request $request) {
 		
 		$validator = Validator::make($request->all(), [
 			'title' => 'required|min:20|max:100',
@@ -161,4 +196,56 @@ class TutorController extends Controller
 		return response()->json(array('success' => 'OK', 200));	
 	}
 	
+//******************************************************************************
+// formDetailsUploadPOST
+//******************************************************************************
+
+	public function formDetailsUploadPOST(Request $request) {
+		$validator = Validator::make($request->all(), [
+			'fee' => 'required|integer|digits_between:1,4'
+		]);
+
+		if ($validator->fails()) {
+			return response()->json(array('success' => 'NO', 200));		
+		}
+		
+		// required_without_all -> dosn't work for me
+		
+		$ok = false;
+		if ($request->where_online == 1) $ok = true;
+		if ($request->where_student_place == 1) $ok = true;
+		if ($request->where_tutor_place == 1) $ok = true;
+		
+		if (!$ok) {
+			return response()->json(array('success' => 'NO', 200));		
+		}
+	
+		$ok = false;
+		if ($request->when_morning == 1) $ok = true;
+		if ($request->when_afternoon == 1) $ok = true;
+		if ($request->when_evening == 1) $ok = true;
+		if ($request->when_weekend == 1) $ok = true;
+		
+		if (!$ok) {
+			return response()->json(array('success' => 'NO', 200));		
+		}
+		
+		$tutor = User::find(Auth::id())->tutor;
+		$tutor->where_online = $request->where_online;
+		$tutor->where_tutor_place = $request->where_tutor_place;
+		$tutor->where_student_place = $request->where_student_place;
+		$tutor->when_morning = $request->when_morning;
+		$tutor->when_afternoon = $request->when_afternoon;
+		$tutor->when_evening = $request->when_evening;
+		$tutor->when_weekend = $request->when_weekend;
+		$tutor->fee = $request->fee;
+		$tutor->comment = $request->comment;
+		$tutor->save();
+
+		$tutor_ready = Tutor::find($tutor->id)->tutorReady;
+		$tutor_ready->details = 1;
+		$tutor_ready->save();
+		
+		return response()->json(array('success' => 'OK', 200));	
+	}
 }

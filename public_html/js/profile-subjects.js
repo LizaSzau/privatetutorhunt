@@ -35,6 +35,19 @@ hide_missing_subject_form()
 show_suggested_subjects_div()
 
 //-----------------------------------------------------------------------------
+// Scroll to the form
+//-----------------------------------------------------------------------------
+
+window.onload = function(e){ 
+	const node = document.getElementById('top_form')
+	
+	window.scrollTo({
+	  top: node.offsetTop - 70,
+	  behavior: 'smooth',
+	})
+}
+
+//-----------------------------------------------------------------------------
 // Submit subject form - add item
 //-----------------------------------------------------------------------------
 
@@ -104,6 +117,9 @@ function add_subject_DOM() {
 		delete_item(id)
 	}, false)
 	
+	let node_div_flex_1 = document.createElement('div')
+	node_div_flex_1.appendChild(node_btn)
+	
 	let node_span_1 = document.createElement('span')
 	node_span_1.setAttribute('class', 'subject')
 	node_span_1.textContent = subject_text
@@ -111,11 +127,15 @@ function add_subject_DOM() {
 	let node_span_2 = document.createElement('span')
 	node_span_2.textContent = ' - ' + level_text
 	
+	let node_div_flex_2 = document.createElement('div')
+	node_div_flex_2.appendChild(node_span_1)
+	node_div_flex_2.appendChild(node_span_2)
+	
 	let node_div = document.createElement('div')
 	node_div.setAttribute('id', subject_id + '_' + level_id)
-	node_div.appendChild(node_btn)
-	node_div.appendChild(node_span_1)
-	node_div.appendChild(node_span_2)
+	node_div.setAttribute('class', 'subject-flex')
+	node_div.appendChild(node_div_flex_1)
+	node_div.appendChild(node_div_flex_2)
 	
 	document.getElementById('tutor_subjects').appendChild(node_div)
 }
@@ -168,6 +188,7 @@ function delete_subject(subject_id, level_id) {
 	.then(response => response.json())
 	.then(data => {
 		// console.log(data)
+		document.getElementById('btn_form_next').style.display = 'block'
 	})
 	.catch(function(error) {
 		//console.log(error)
@@ -214,6 +235,7 @@ function upload_suggest_subject(subject_missing) {
 	.then(response => response.json())
 	.then(data => {
 		// console.log(data)
+		document.getElementById('btn_form_next').style.display = 'block'
 	})
 	.catch(function(error) {
 		// console.log(error)

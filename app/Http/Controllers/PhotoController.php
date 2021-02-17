@@ -21,10 +21,10 @@ class PhotoController extends Controller
     }
 
 //------------------------------------------------------------------------------
-// Select photos for editing
+// formImagesget - Select photos for editing
 //------------------------------------------------------------------------------
 
-	public function imagesGet()
+	public function formImagesGET()
 	{  
 		$photo = new Photo;
 		

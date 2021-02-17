@@ -27,8 +27,8 @@ $css_file = 'profile';
 <div class="frame-tutor">
 	@include('user/profile-menu')  
 	<div class="frame-tutor-form">
-		<div id="form_contact">
-			<h2>ABOUT YOU</h2>
+		<div id="form_about" class="form-about">
+			<h2 id="top_form">ABOUT YOU</h2>
 			<hr class="blue-light">
 
 			<form name="form_profile" id="form_profile"  onsubmit="return validate_form()" novalidate>
@@ -91,18 +91,3 @@ $css_file = 'profile';
 </div>
 
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

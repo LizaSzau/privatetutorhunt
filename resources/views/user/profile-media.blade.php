@@ -32,7 +32,7 @@ $css_file = 'profile';
 	@include('user/profile-menu')  
 	<div class="frame-tutor-form">
 		<div>
-			<h2>MEDIA</h2>
+			<h2 id="top_form">MEDIA</h2>
 			<hr class="blue-light">
 			
 			<div class="content">
@@ -70,54 +70,54 @@ $css_file = 'profile';
 			<div class="space-30"></div>
 			<div class="content">
 				<h3>YouTube videos</h3>
-				<ul>
-					<li>You can link 2 YouTube videos.</li>
-				</ul>
+				<div class="info rounded">
+					<ul>
+						<li>You can link 2 YouTube videos.</li>
+					</ul>
+				</div>
 			</div>
-		
-		
-				<div class="form">	
-					<div id="video_link" class="row-data">
-						<div class="label left"><label for="video">Video link:</label></div>
-						<div class="star"></div>
-						<div class="input"><input id="video" type="text" name="name" maxlength="191" placeholder="YouTube video link"></div>
-					</div>
-					<div class="hide" id="hide_video"><div role="alert" id="error_video"></div></div>
+			<div class="form form-video">	
+				<div id="video_link" class="row-data">
+					<div class="label left"><label for="video">Video link:</label></div>
+					<div class="star"></div>
+					<div class="input"><input id="video" type="text" name="name" maxlength="191" placeholder="YouTube video link"></div>
+				</div>
+				<div class="hide" id="hide_video"><div role="alert" id="error_video"></div></div>
 
-					<div id="video_button" class="row-data">
-						<div class="label hide-field"></div>
-						<div class="star hide-field"></div>
-						<div class="input buttons video">
-							<div><button id="btn_video">Save video</button></div>
-						</div>
+				<div id="video_button" class="row-data">
+					<div class="label hide-field"></div>
+					<div class="star hide-field"></div>
+					<div class="input buttons video">
+						<div><button id="btn_video">Save video</button></div>
 					</div>
-					
-					<div class="ajax" id="ajax_video"><img src="{{ asset('images/ajax.svg') }}"></div>
+				</div>
+				
+				<div class="ajax" id="ajax_video"><img src="{{ asset('images/ajax.svg') }}"></div>
 
-					<div id="frame_video" class="frame-video">
-						<div id="video_1">
-						  <iframe id="iframe_1" class="rounded" src="" frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						  <button id="btn_delete_1"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
-						</div>
-
-						<div id="video_2">
-						  <iframe id="iframe_2" class="rounded" src="" frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						  <button id="btn_delete_2"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
-						</div>
+				<div id="frame_video" class="frame-video">
+					<div id="video_1">
+					  <iframe id="iframe_1" class="rounded" src="" frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					  <button id="btn_delete_1"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
 					</div>
-					
-					<div class="row-data">
-						<div class="label"></div>
-						<div class="star"></div>
-						<div class="input buttons video">
-							<div>
-								<a href="{{ url('/tutor/profile/subjects') }}">
-									<div id="btn_form_next" class="btn-next rounded">Next step</div>
-								</a>
-							</div>
+
+					<div id="video_2">
+					  <iframe id="iframe_2" class="rounded" src="" frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					  <button id="btn_delete_2"><img src="{{ asset('images/fa-trash.png') }}" alt="delete" title="delete"></button>
+					</div>
+				</div>
+				
+				<div class="row-data">
+					<div class="label"></div>
+					<div class="star"></div>
+					<div class="input buttons video">
+						<div>
+							<a href="{{ url('/tutor/profile/subjects') }}">
+								<div id="btn_form_next" class="btn-next rounded">Next step</div>
+							</a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 		</div>
 	</div>
@@ -127,22 +127,3 @@ $css_file = 'profile';
 <script src="{{ asset('js/vendor/dragula.min.js') }}"></script>
 	
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

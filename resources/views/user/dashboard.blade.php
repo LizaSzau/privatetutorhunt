@@ -28,8 +28,10 @@ $css_file = 'dashboard';
 	<hr class="blue-light">
 
 	@if  (Auth::user()->tutor->ready_flag == 0)
-		You have not create your profile yet. 
-		<br><br><a href="{{ url('tutor/profile/contact') }}" class="link-main">Click here to create your tutor profile.</a>
+		<div class="message-warning-dark">
+			<div>You have not created your profile yet.</div>
+		</div>
+		<a href="{{ url('tutor/profile/welcome') }}" class="link-main">Click here to create your tutor profile.</a>
 	@endif
 	
 	<hr class="blue-light logout">
