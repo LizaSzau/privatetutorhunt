@@ -43,8 +43,8 @@
 						<div class="border"></div>
 						<a href="{{ url('/tutor/dashboard') }}" @if(Route::current()->getName() == 'user_home') class="active" @endif alt="Dashboard">Info</a>	
 						<a href="{{ url('/tutor/profile/welcome') }}" @if(Route::current()->getName() == 'user_profile_contact') class="active" @endif alt="Your profile">Your profile</a>
-						<a href="#">Activities</a>
-						<a href="#">Personal data</a>
+						<!--<a href="#">History</a>-->
+						<a href="{{ url('/tutor/personal-data') }}">Personal data</a>
 						<a>
 							<form action="{{ url('logout') }}" method="POST">
 								{{ csrf_field() }}

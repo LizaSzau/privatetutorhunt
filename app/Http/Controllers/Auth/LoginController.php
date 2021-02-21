@@ -52,7 +52,7 @@ class LoginController extends Controller
 			return redirect()->route('login')->with('not_verified', 'not verified');
 		}
 		
-        return redirect()->intended('tutor/dashboard');
+        return redirect()->intended('/tutor/dashboard');
     }
 	
 //******************************************************************************
@@ -118,7 +118,7 @@ class LoginController extends Controller
 
     protected function sendSuccessResponse()
     {
-        return redirect()->intended('tutor/dashboard');
+        return redirect()->intended('/tutor/dashboard');
     }
 
 //******************************************************************************

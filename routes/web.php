@@ -58,6 +58,9 @@ Route::group(['middleware' => ['auth']], function()
 	Route::get('tutor/profile/subjects', [SubjectController::class, 'formSubjectsGET']);
 	Route::get('tutor/profile/locations', [LocationController::class, 'formLocationGET']);
 	Route::get('tutor/profile/details', [TutorController::class, 'formDetailGET']);
+	Route::get('tutor/profile/activate', [TutorController::class, 'formActivateGET']);
+	Route::get('tutor/profile/activate/set', [TutorController::class, 'formActivateSET']);
+	Route::get('tutor/personal-data', [TutorController::class, 'personalDataGET']);
 	
 	Route::post('tutor/profile/form/contact/upload', [TutorController::class, 'formContactUploadPOST']);
 	Route::post('tutor/profile/form/about/upload', [TutorController::class, 'formAboutUploadPOST']);
@@ -71,4 +74,5 @@ Route::group(['middleware' => ['auth']], function()
 	Route::post('tutor/profile/form/locations/upload', [LocationController::class, 'formLocationUploadPOST']);
 	Route::post('tutor/profile/form/locations/delete', [LocationController::class, 'formLocationDeletePOST']);
 	Route::post('tutor/profile/form/details/upload', [TutorController::class, 'formDetailsUploadPOST']);
+	Route::post('tutor/personal-data/delete', [TutorController::class, 'personalDataDeletePOST']);
 });

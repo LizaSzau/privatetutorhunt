@@ -1,12 +1,12 @@
 <div class="top">
 	<div>
 		<div class="left">
-			<a href="{{ url('/for-tutors-and-teachers') }}" class="link-white slim">for tutors</a>
-			<br><a href="{{ url('/contact') }}" class="link-white">contact</a>
+			<a href="{{ url('/for-tutors-and-teachers') }}" class="link-white small">for tutors</a>
+			<br><a href="{{ url('/contact') }}" class="link-white small">contact</a>
 		</div>
 		<div class="right">
-			<a href="{{ url('/privacy-policy') }}" class="link-white">privacy policy</a>
-			<br><a href="{{ url('/terms-of-service') }}" class="link-white">terms of service</a>
+			<a href="{{ url('/privacy-policy') }}" class="link-white small">privacy policy</a>
+			<br><a href="{{ url('/terms-of-service') }}" class="link-white small">terms of service</a>
 		</div>
 	</div>
 </div>

@@ -17,7 +17,7 @@
 		color: var(--blue-dark); font-size: 17px;  line-height: 30px; text-align: center; border-radius: 17px; -moz-border-radius: 17px; -webkit-border-radius: 17px; }
 
 .login .modal-flex .right { height: 205px; width: 50%; }
-.login .modal-flex .right > div:first-child  { color: var(--blue-dark); font-family: 'avenir-bold'; margin-bottom: 7px; }
+.login .modal-flex .right > div:first-child  { color: var(--blue-dark); font-weight: 800; margin-bottom: 7px; }
 .login .modal-flex .right input { width: 100%; background: var(--grey-1); border-bottom: 1px solid var(--blue-dark); border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; padding: 0;}
 .login .modal-flex .right input[type=checkbox] { width: 20px; height: 20px; xmargin-bottom: -10px; padding: 0; margin: 0;}
 .login .modal-flex .right input:focus { outline: none; background: none; border-bottom: 1px solid var(--blue-dark); color: var(--blue-dark); }
@@ -34,7 +34,7 @@
 .login .bottom { background: var(--blue-dark); margin-top: 20px; overflow: auto; padding: 10px 0; border-radius: 5px; -moz-border-radius: 5px;  -webkit-border-radius: 5px;}
 .login .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
 .login .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
-.login .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }
+.login .bottom  a:link { font-weight: 800; text-decoration: none; }
 .login .bottom  a:hover { text-decoration: underline; }
 
 /**************************************
@@ -53,7 +53,7 @@ MAX 780
 
 
 	.login .modal-flex .right { height: 205px; width: 100%; }
-	.login .modal-flex .right > div:first-child  { color: var(--blue-dark); font-family: 'avenir-bold'; margin-bottom: 7px; }
+	.login .modal-flex .right > div:first-child  { color: var(--blue-dark); font-weight: 800; margin-bottom: 7px; }
 	.login .modal-flex .right input { width: 100%; border-bottom: 1px solid var(--grey-3); border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; padding: 0;}
 	.login .modal-flex .right input[type=checkbox] { width: 20px; height: 20px; margin-bottom: -10px; padding: 0; margin: 0;}
 	.login .modal-flex .right input:focus { outline: none; background: none; border-bottom: 1px solid var(--blue-dark); }
@@ -66,7 +66,7 @@ MAX 780
 	.login .bottom { background: var(--blue-dark); overflow: auto; padding: 10px 0; }
 	.login .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
 	.login .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
-	.login .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }
+	.login .bottom  a:link { font-weight: 800; text-decoration: none; }
 	.login .bottom  a:hover { text-decoration: underline; }
 }
 	

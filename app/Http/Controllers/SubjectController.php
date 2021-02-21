@@ -18,7 +18,7 @@ use Auth;
 use DB;
 use Str;
 
-class SubjectController extends Controller
+class SubjectController extends TutorController
 {	
 	private $maxNewSubjects = 3;
 	
@@ -80,6 +80,7 @@ class SubjectController extends Controller
 			'subjects' => $subjects,
 			'subject_number' => $subject_number,
 			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor->id)->flag_status,
 			'new_subjects' => $new_subjects
 		);
 		
@@ -120,6 +121,7 @@ class SubjectController extends Controller
 		$tutor_ready->subjects = 1;
 		$tutor_ready->save();
 		
+		$this->checkProfileReady($tutor->id);
 		new CreateViewTables();
 		
 		return response()->json(array('success' => 'OK', 200)); 

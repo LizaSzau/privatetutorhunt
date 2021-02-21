@@ -70,8 +70,11 @@ function photo_order() {
 		e = descendents[i];
 		images_id.push(e.id)
 	}
-
+	
+	image_number = images_id.length
+	
 	if (images_id.length == 0) {
+		image_number = 1;
 		document.getElementById('error_image').innerHTML = 'You can not delete the last photo.'
 		document.getElementById('hide_image').className = 'message-error-image'	
 		get_photos()
@@ -273,12 +276,12 @@ const get_videos = async () => {
 			} 
 			
 			document.getElementById('ajax_video').style.display = 'none'
-			document.getElementById('frame_video').style.display = 'block'
+			document.getElementById('frame_video').style.display = 'flex'
 		})
 		.catch(function(error) {
 			 //console.log(error)
 			 document.getElementById('ajax_video').style.display = 'none'
-			 document.getElementById('frame_video').style.display = 'block'
+			 document.getElementById('frame_video').style.display = 'flex'
 		});
 }
 

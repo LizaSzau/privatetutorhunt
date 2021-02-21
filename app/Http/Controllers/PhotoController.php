@@ -12,13 +12,8 @@ use Auth;
 use DB;
 
 
-class PhotoController extends Controller
+class PhotoController extends TutorController
 {	
-
-    public function __construct()
-    {
-
-    }
 
 //------------------------------------------------------------------------------
 // formImagesget - Select photos for editing
@@ -32,7 +27,7 @@ class PhotoController extends Controller
 		(
 			'photos' => $photo->getPhotos()
 		); 
-			
+		
 		return response()->json(array('data' => $data, 200));
 	}
 
@@ -96,6 +91,7 @@ class PhotoController extends Controller
 		$tutor_ready->media = 1;
 		$tutor_ready->save();
 		
+		$this->checkProfileReady($tutor[0]->id);
 		return response()->json(array('success' => 'OK', 200)); 
 	}
 }

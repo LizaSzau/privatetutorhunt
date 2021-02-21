@@ -1,0 +1,14 @@
+div.form { width: 400px; margin: 40px auto; padding: 20px; background: var(--red-light); }
+div.form div code { color: var(--red); }
+div.form input { width: 100%; }
+div.form button { width: 100%; background: var(--red); }
+div.form button:hover { background: var(--red-dark); }
+
+/**************************************
+MAX 520
+**************************************/
+
+@media (max-width: 520px)
+{ 
+	div.form { width: 100%; }
+}

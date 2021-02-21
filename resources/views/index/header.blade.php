@@ -9,12 +9,14 @@
 		<title>@lang('index.app-name') - @yield('title')</title>
 		<meta name="description" content="&#128218; @yield('description')">
 		<link rel="icon" href="{{ asset('favicon.ico') }}"  sizes="32x32">
-		<link rel="icon" href="{{ asset('images/favicon-128.png') }}"  sizes="128x128">
-		<link rel="icon" href="{{ asset('images/favicon-152.png') }}"  sizes="152x152">
-		<link rel="icon" href="{{ asset('images/favicon-167.png') }}"  sizes="167x167">
-		<link rel="icon" href="{{ asset('images/favicon-180.png') }}"  sizes="180x180">
-		<link rel="icon" href="{{ asset('images/favicon-192.png') }}"  sizes="192x192">
-		<link rel="icon" href="{{ asset('images/favicon-196.png') }}"  sizes="196x196">
+		<link rel="icon" href="{{ asset('images/favicon-128.png') }}" sizes="128x128">
+		<link rel="icon" href="{{ asset('images/favicon-152.png') }}" sizes="152x152">
+		<link rel="icon" href="{{ asset('images/favicon-167.png') }}" sizes="167x167">
+		<link rel="icon" href="{{ asset('images/favicon-180.png') }}" sizes="180x180">
+		<link rel="icon" href="{{ asset('images/favicon-192.png') }}" sizes="192x192">
+		<link rel="icon" href="{{ asset('images/favicon-196.png') }}" sizes="196x196">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <link href="{{ asset('css/login-modal.css') }}" rel="stylesheet">
     </head>

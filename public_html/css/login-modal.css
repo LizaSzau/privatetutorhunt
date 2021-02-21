@@ -25,7 +25,7 @@
 		color: var(--grey-3); font-size: 17px;  line-height: 30px; text-align: center; border-radius: 17px; -moz-border-radius: 17px; -webkit-border-radius: 17px; }
 
 .modal .modal-flex .right { height: 205px; width: 50%; }
-.modal .modal-flex .right > div:first-child  { color: var(--blue-dark); font-family: 'avenir-bold'; margin-bottom: 7px; }
+.modal .modal-flex .right > div:first-child  { color: var(--blue-dark); font-weight: 800; margin-bottom: 7px; }
 .modal .modal-flex .right input { width: 100%; border-bottom: 1px solid var(--grey-3); border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; padding: 0;}
 .modal .modal-flex .right input[type=checkbox] { width: 20px; height: 20px; xmargin-bottom: -8px; padding: 0; margin: 0;}
 .modal .modal-flex .right input:focus { outline: none; background: none; border-bottom: 1px solid var(--blue-dark); color: var(--blue-dark) }
@@ -42,7 +42,7 @@
 .modal .bottom { background: var(--blue-dark); overflow: auto; padding: 10px 0; }
 .modal .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
 .modal .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
-.modal .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }
+.modal .bottom  a:link { font-weight: 800; text-decoration: none; }
 .modal .bottom  a:hover { text-decoration: underline; }
 
 /**************************************
@@ -59,7 +59,7 @@ MAX 700
 	.modal .modal-flex .center .or { position: relative; left: 50%; top: 17px; }
 
 	.modal .modal-flex .right { height: 205px; width: 100%; }
-	.modal .modal-flex .right > div:first-child  { color: var(--blue-dark); font-family: 'avenir-bold'; margin-bottom: 7px; }
+	.modal .modal-flex .right > div:first-child  { color: var(--blue-dark); font-weight: 800; margin-bottom: 7px; }
 	.modal .modal-flex .right input { width: 100%; border-bottom: 1px solid var(--grey-3); border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; padding: 0;}
 	.modal .modal-flex .right input[type=checkbox] { width: 20px; height: 20px; margin-bottom: -10px; padding: 0; margin: 0;}
 	.modal .modal-flex .right input:focus { outline: none; background: none; border-bottom: 1px solid var(--blue-dark); }
@@ -72,7 +72,7 @@ MAX 700
 	.modal .bottom { background: var(--blue-dark); overflow: auto; padding: 10px 0; }
 	.modal .bottom  div { width: 50%; float: left; color: var(--white); padding: 0 10px; }
 	.modal .bottom  div:first-child { text-align: right; border-right: 1px solid var(--grey-3); }
-	.modal .bottom  a:link { font-family: 'avenir-bold'; text-decoration: none; }
+	.modal .bottom  a:link { font-weight: 800; text-decoration: none; }
 	.modal .bottom  a:hover { text-decoration: underline; }
 }
 	

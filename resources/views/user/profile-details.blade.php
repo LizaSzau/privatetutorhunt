@@ -128,7 +128,7 @@ $css_file = 'profile';
 						<div class="input buttons">
 							<div><button id="btn_form">Save</button></div>
 							<div>
-								<a href="{{ url('/tutor/profile/media') }}">
+								<a href="{{ url('/tutor/profile/activate') }}">
 									<div id="btn_form_next" class="btn-next rounded">Next step</div>
 								</a>
 							</div>

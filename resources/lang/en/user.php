@@ -31,4 +31,8 @@ return
 	
 	'title-profile-details' => 'Tutor profile - Details',
 	'description-profile-details' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for details data.',
+
+	'title-profile-activate' => 'Tutor profile - Activate',
+	'description-profile-activate' => 'Tutors and teachers create their tutor profiles in order to teaching students. This section for activate data.',
+
 ];

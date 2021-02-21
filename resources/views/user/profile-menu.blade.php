@@ -25,8 +25,8 @@
 			<div id="pm_details" @if ($tutor_ready->details == 1) class="tutor-menu-green" @endif><img src="{{ asset('images/fa-tick.png') }}"></div>
 		</div>
 		<div class="status-item">
-			<div><a href="{{ url('/tutor/profile/contact') }}">Active</a></div>
-			<div><img src="{{ asset('images/fa-tick.png') }}"></div>
+			<div><a href="{{ url('/tutor/profile/activate') }}">Activate</a></div>
+			<div @if ($tutor_status == 1) class="tutor-menu-green" @endif><img src="{{ asset('images/fa-tick.png') }}"></div>
 		</div>
 	</div>
 </div>  

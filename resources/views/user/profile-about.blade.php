@@ -29,7 +29,7 @@ $css_file = 'profile';
 	<div class="frame-tutor-form">
 		<div id="form_about" class="form-about">
 			<h2 id="top_form">ABOUT YOU</h2>
-			<hr class="blue-light">
+			<hr class="blue-light margin-40">
 
 			<form name="form_profile" id="form_profile"  onsubmit="return validate_form()" novalidate>
 				<div class="form">	

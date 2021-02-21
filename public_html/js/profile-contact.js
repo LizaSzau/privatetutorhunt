@@ -16,6 +16,9 @@ window.onload = function(e){
 //------------------------------------------------------------------------------
 
 function call_ajax_profile(data) {
+	let form_div = document.getElementById('hide_form')
+	let form_error = document.getElementById('error_form')
+		
 	document.getElementById('ajax_profile').style.display = 'block'
 	document.getElementById('btn_form').style.display = 'none'
 	document.getElementById('btn_form_next').style.display = 'none'
@@ -35,10 +38,6 @@ function call_ajax_profile(data) {
 	})
 	.then(response => response.json())
 	.then(data => {
-		
-		let form_div = document.getElementById('hide_form')
-		let form_error = document.getElementById('error_form')
-			
 		if(data.success == 'OK') { 
 			let css_type = 'message-success'
 			document.getElementById('btn_form_next').style.display = 'block'											
@@ -56,6 +55,11 @@ function call_ajax_profile(data) {
 	})
 	.catch(function(error) {
 		 // console.log(error);
+		document.getElementById('ajax_profile').style.display = 'none'
+		document.getElementById('btn_form').style.display = 'block'
+		let css_type = 'message-error'
+		form_error.innerHTML = 'Something unexpected happened. Please try again.'
+		form_div.className = css_type
 	});
 }
 

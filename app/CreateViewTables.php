@@ -7,11 +7,28 @@ use Str;
 class CreateViewTables
 {
     public function __construct() {
+		$this->createViewActiveTutorSubjectLevel();
         $this->createViewSubjectTutor();
         $this->createViewCategoryTutor();
         $this->createTmpHome();
         $this->createTmpSubjects();
     }
+	
+//******************************************************************************
+// Generate view table - ActiveTutorSubjectlevel
+//******************************************************************************
+
+	private function createViewActiveTutorSubjectLevel() {
+		DB::statement('DROP VIEW IF EXISTS view_active_tutor_subject_level');
+		DB::statement('
+			CREATE VIEW view_active_tutor_subject_level
+            AS
+			SELECT t.id, t.flag_status, tsl.tutor_id, tsl.subject_id 
+			FROM tutor_subject_level AS tsl
+			JOIN tutors AS t ON tsl.tutor_id = t.id
+			HAVING t.flag_status = 1
+		');
+	}
 	
 //******************************************************************************
 // Generate view table - SubjectTutor
@@ -23,7 +40,7 @@ class CreateViewTables
 			CREATE VIEW view_subject_tutor 
             AS
 			SELECT s.id AS subject_id, s.name AS subject_name, c.id AS category_id, c.name AS category_name, COUNT(DISTINCT(tsl.tutor_id)) AS tutor_pc
-			FROM tutor_subject_level AS tsl
+			FROM view_active_tutor_subject_level AS tsl
 			JOIN subjects AS s ON tsl.subject_id = s.id
 			JOIN categories AS c ON s.category_id = c.id
 			GROUP BY s.id  

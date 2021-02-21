@@ -23,7 +23,7 @@
 		
 	<div class="modal rounded" id="modal_login">
 		<div class="close"><div id="close">x</div></div>
-		@include('auth/login_modal')
+		@if (!isset($user)) @include('auth/login_modal')@endif
 	</div>
 	
 	<link rel="stylesheet" href="{{ asset('css/'.$css_file.'.css') }}">

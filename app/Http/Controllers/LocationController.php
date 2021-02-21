@@ -12,7 +12,7 @@ use View;
 use Auth;
 use DB;
 
-class LocationController extends Controller
+class LocationController extends TutorController
 {	
 	private $max = 3;
 	
@@ -33,6 +33,7 @@ class LocationController extends Controller
 
 		$data = array(
 			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor->id)->flag_status,
 			'locations' => $locations
 		);
 		
@@ -78,7 +79,9 @@ class LocationController extends Controller
 			$tutor_ready = Tutor::find($tutor->id)->tutorReady;
 			$tutor_ready->location = 1;
 			$tutor_ready->save();
-		
+			
+			$this->checkProfileReady($tutor->id);
+			
 			return response()->json(array('success' => 'OK', 'location_id' => $location_id, '200'));	
 		} else {
 			return response()->json(array('success' => 'IN', 200));	

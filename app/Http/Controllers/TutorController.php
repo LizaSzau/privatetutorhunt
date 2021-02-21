@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Tutor;
 use App\Models\Photo;
 use App\Models\Video;
+use App\CreateViewTables;
 use Auth;
 use DB;
 
@@ -19,11 +20,12 @@ class TutorController extends Controller
 //******************************************************************************
 
 	public function welcomeGET() {
-		$tutor = User::find(Auth::id())->tutor;
-		$tutor_ready = Tutor::find($tutor->id)->tutorReady;
-		
+		$tutor_id = Auth::user()->tutor->id;
+		$tutor_ready = Tutor::find($tutor_id)->tutorReady;
+
 		$data = array(
-			'tutor_ready' => $tutor_ready
+			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor_id)->flag_status
 		);
 		
 		return view('user.profile-welcome')->with($data);
@@ -45,7 +47,8 @@ class TutorController extends Controller
 		
 		$data = array(
 			'tutor' => $tutor,
-			'tutor_ready' => $tutor_ready
+			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor[0]->id)->flag_status
 		);
 			
 		return view('user.profile-contact')->with($data);
@@ -65,7 +68,8 @@ class TutorController extends Controller
 		
 		$data = array(
 			'tutor' => $tutor,
-			'tutor_ready' => $tutor_ready
+			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor[0]->id)->flag_status
 		);
 			
 		return view('user.profile-about')->with($data);
@@ -92,6 +96,7 @@ class TutorController extends Controller
 		
 		$data = array(
 			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor[0]->id)->flag_status,
 			'image_number' => $image_number,
 			'video_number' => $video_number
 		);
@@ -113,10 +118,39 @@ class TutorController extends Controller
 		
 		$data = array(
 			'tutor' => $tutor,
-			'tutor_ready' => $tutor_ready
+			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor[0]->id)->flag_status
 		);
 			
 		return view('user.profile-details')->with($data);
+	}
+	
+//******************************************************************************
+// formActivateGET
+//******************************************************************************
+
+	public function formActivateGET() {
+		$tutor = DB::table('tutors')
+			->select('id', 'name', 'email_visible', 'email_web', 'phone_area_1', 'phone_number_1', 'phone_area_2', 'phone_number_2', 'webpage', 'facebook')
+			->where('user_id', '=', Auth::id())
+			->get();
+			
+		$tutor_ready = Tutor::find($tutor[0]->id)->tutorReady;
+		
+		$data = array(
+			'tutor_ready' => $tutor_ready,
+			'tutor_status' => Tutor::find($tutor[0]->id)->flag_status
+		);
+			
+		return view('user.profile-activate')->with($data);
+	}
+	
+//******************************************************************************
+// personalDataGET
+//******************************************************************************
+
+	public function personalDataGET() {
+		return view('user.personal-data');
 	}
 	
 //******************************************************************************
@@ -145,7 +179,7 @@ class TutorController extends Controller
 		if (!$request->phone_area_1 && !$request->phone_area_2 && !$request->email_visible && !$request->email_web) {
 			return response()->json(array('success' => 'NO', 200));	
 		}
-		
+
 		$tutor = User::find(Auth::id())->tutor;
 		$tutor->name = $request->name;
 		if ($request->email_visible) $tutor->email_visible = 1; else $tutor->email_visible = 0;
@@ -161,6 +195,8 @@ class TutorController extends Controller
 		$tutor_ready = Tutor::find($tutor->id)->tutorReady;
 		$tutor_ready->contact = 1;
 		$tutor_ready->save();
+		
+		$this->checkProfileReady($tutor->id);
 		
 		return response()->json(array('success' => 'OK', 200));	
 	}
@@ -188,10 +224,12 @@ class TutorController extends Controller
 		$tutor->about_education= $request->education;
 		$tutor->about_experience= $request->experience;
 		$tutor->save();
-
+		
 		$tutor_ready = Tutor::find($tutor->id)->tutorReady;
 		$tutor_ready->about = 1;
 		$tutor_ready->save();
+		
+		$this->checkProfileReady($tutor->id);
 		
 		return response()->json(array('success' => 'OK', 200));	
 	}
@@ -246,6 +284,90 @@ class TutorController extends Controller
 		$tutor_ready->details = 1;
 		$tutor_ready->save();
 		
+		$this->checkProfileReady($tutor->id);
+		
 		return response()->json(array('success' => 'OK', 200));	
+	}
+	
+//******************************************************************************
+// formActivateSET - when user click on activate / deactivate button
+//******************************************************************************
+
+	public function formActivateSET() {
+		$tutor = Auth::user()->tutor;
+		$flag_status = $tutor->flag_status;
+		$flag = 2;
+		
+		if ($flag_status == 0 || $flag_status == 2) {  // deactivated or inactive after reg
+			$flag = 1;
+		} 
+			
+		$tutor->flag_status = $flag;
+		$tutor->save();		
+		
+		new CreateViewTables();
+		
+		return redirect('/tutor/profile/activate');
+	}
+	
+//******************************************************************************
+// personalDataDeletePOST
+//******************************************************************************
+
+	public function personalDataDeletePOST(Request $request) {
+		if ($request->delete != 'delete all of my data') {
+			return redirect('/tutor/personal-data');	
+		}
+		
+		$user_id = Auth::user()->id;
+		$tutor_id = Auth::user()->tutor->id;
+		$email = Auth::user()->email;
+		
+		$photos = DB::table('photos')->where('tutor_id', $tutor_id)->get();
+		
+		foreach ($photos as $photo) 
+		{ 
+			@unlink('upload/photos/large/'.$photo->name);
+			@unlink('upload/photos/small/'.$photo->name);
+		}
+		
+		DB::delete('DELETE FROM locations WHERE tutor_id = ?', [$tutor_id]);
+		DB::delete('DELETE FROM new_subjects WHERE tutor_id = ?', [$tutor_id]);
+		DB::delete('DELETE FROM password_resets WHERE email = ?', [$email]);
+		DB::delete('DELETE FROM photos WHERE tutor_id = ?', [$tutor_id]);
+		DB::delete('DELETE FROM tutors WHERE id = ?', [$tutor_id]);
+		DB::delete('DELETE FROM tutor_ready WHERE tutor_id = ?', [$tutor_id]);
+		DB::delete('DELETE FROM tutor_subject_level WHERE tutor_id = ?', [$tutor_id]);
+		DB::delete('DELETE FROM verify_users WHERE id_user = ?', [$user_id]);
+		DB::delete('DELETE FROM videos WHERE tutor_id = ?', [$tutor_id]);
+		
+		new CreateViewTables();
+		
+		DB::delete('DELETE FROM users WHERE id = ?', [$user_id]);
+		return redirect('/');
+	}
+	
+//******************************************************************************
+// Check tutor profile ready
+//******************************************************************************
+
+	protected function checkProfileReady($tutor_id) {
+		$ready = true;
+		$tutor_ready = Tutor::find($tutor_id)->tutorReady;
+		
+		if ($tutor_ready->contact == 0) $ready = false;
+		if ($tutor_ready->about == 0) $ready = false;
+		if ($tutor_ready->media == 0) $ready = false;
+		if ($tutor_ready->subjects == 0) $ready = false;
+		if ($tutor_ready->location == 0) $ready = false;
+		if ($tutor_ready->details == 0) $ready = false;
+		
+		if ($ready) {
+			$tutor_ready->flag_ready = 1;
+		} else {
+			$tutor_ready->flag_ready = 0;
+		}
+		
+		$tutor_ready->save();
 	}
 }

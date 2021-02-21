@@ -78,7 +78,7 @@ $css_file = 'profile';
 			</div>
 			<div class="form form-video">	
 				<div id="video_link" class="row-data">
-					<div class="label left"><label for="video">Video link:</label></div>
+					<div class="label left"><label for="video">Link:</label></div>
 					<div class="star"></div>
 					<div class="input"><input id="video" type="text" name="name" maxlength="191" placeholder="YouTube video link"></div>
 				</div>

@@ -13,7 +13,6 @@
 .frame-tutor-form { width: 100%; padding-left: 40px; }
 .frame-tutor-form .form { width: 540px; margin: 0 auto; }
 .frame-tutor-form input[type=checkbox] { height: 24px; width: 24px;}
-.frame-tutor-form hr { margin-bottom: 40px; }
 .frame-tutor-form .row-data { height: 40px; margin-bottom: 20px; }
 .frame-tutor-form .row-data .label { float: left; text-align: right; padding-right: 10px; min-height: 30px; width: 100px; line-height: 40px; }
 .frame-tutor-form .row-data .label.left { text-align: left; }
@@ -66,7 +65,7 @@
 .frame-tutor-form .input.buttons.video .btn-next { float: right; }
 
 .frame-video { display: flex; width: 540px; margin: 20px auto; padding: 20px 20px 0 0; justify-content: space-between; flex-direction: row-reverse; }
-.frame-video > div { position: relative; width: calc(50% - 5px); overflow: hidden; display: none; }
+.frame-video > div { position: relative; width: calc(50% - 5px); overflow: hidden; xdisplay: none; }
 .frame-video > div iframe{width: 100%; max-width: 100%; }
 .frame-video > div button { position: absolute; right: 0; z-index: 9999; background: var(--red); color: var(--white); width: 40px; margin: 0;  padding: 0; 
 		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-top-right-radius: 5px; -moz-border-top-right-radius: 5px; -webkit-border-top-right-radius: 5px;
@@ -124,6 +123,8 @@
 .frame-tutor-form .form-details .input.short input { width: 100px; }
 .frame-tutor-form .form-details .input.short div:last-child { line-height: 40px; margin-left: 20px; }
 .frame-tutor-form .form-details .row-data { height: auto; overflow: auto; }
+
+.frame-tutor-form .form-activate button.activate { float: left; width: 250px; }
 
 /********************************************************************************
 MEDIA
@@ -216,4 +217,11 @@ MAX 450
 	.frame-tutor-form .row-data .input.buttons > div { overflow: auto; width: 100%; }
 	.frame-tutor-form .row-data .input.buttons { display: block; }
 	.frame-tutor-form .btn-next { float: right; }
+}
+
+/**************************************
+MAX 400
+**************************************/
+@media (max-width: 400px) { 
+	.frame-tutor-form .form-activate button.activate { width: 100%; }
 }

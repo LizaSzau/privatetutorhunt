@@ -38,25 +38,25 @@ $css_file = 'profile';
 					<li>Do not forget to make active your profile.</li>
 				</ul>
 				<p><br>
-				<a href="contact" class="link-main bold">Contact</a>
+				<a href="contact" class="link-main">Contact</a>
 				<br>You name, e-mail, phone numbers, webpage and Facebook profile.
 				<p><br>
-				<a href="about" class="link-main bold">About</a>
+				<a href="about" class="link-main">About</a>
 				<br>A short and concise summary as a title of your profile, a description of you, your studies and your experience.
 				<p><br>
-				<a href="media" class="link-main bold">Media</a>
+				<a href="media" class="link-main">Media</a>
 				<br>You can uploade some photos and YouTube link to make your profile more impressive.
 				<p><br>
-				<a href="subjects" class="link-main bold">Subjects</a>
+				<a href="subjects" class="link-main">Subjects</a>
 				<br>The subjects and levels you teach.
 				<p><br>
-				<a href="locations" class="link-main bold">Locations</a>
+				<a href="locations" class="link-main">Locations</a>
 				<br>The places where you teach.
 				<p><br>
-				<a href="details" class="link-main bold">Details</a>
+				<a href="details" class="link-main">Details</a>
 				<br>The details about you. Who dou you teach, when end where you are available, how much is your fee and so on.
 				<p><br>
-				<a href="active" class="link-main bold">Active</a>
+				<a href="activate" class="link-main">Activate</a>
 				<br>You can active or deactive your profile.
 				<p><br>
 				<div>

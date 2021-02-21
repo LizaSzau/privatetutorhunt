@@ -27,8 +27,8 @@ $css_file = 'search';
 <div class="search-frame">
 
 @foreach($dataCategories as $cat)
-	<div>
-		<div class="category"><a href="{{ $cat->category_id }}"><h2>{{ $cat->category_name }}</h2></a><hr></div>
+	<div class="category-group rounded">
+		<div class="category"><a href="{{ $cat->category_id }}"><h2>{{ $cat->category_name }}</h2></a></div>
 		<div class="subject">
 		@php
 		
@@ -36,12 +36,12 @@ $css_file = 'search';
 			
 			foreach($subjects as $sub) {
 				$subject = explode('*', $sub);
-				echo '<a href="'.$subject[2].'">
-						<span class="cloud rounded">
-							<h3>'.$subject[0].'</h3>
-							<span class="number">'.$subject[1].'</span>
-						</span>
-					</a>';
+				echo '
+						<div class="cloud rounded">
+							<div><a href="'.$subject[2].'"><h3>'.$subject[0].'</h3></a></div>
+							<div class="number">'.$subject[1].'</div>
+						</div>
+					';
 			}
 			
 		@endphp

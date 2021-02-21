@@ -1,4 +1,4 @@
-.frame-dashboard hr.logout { margin-top: 40px; }
-.frame-dashboard .logout { text-align: right; }
+.frame-dashboard .button-div { text-align: right; margin: 20px 0; }
+.frame-dashboard .button-div button { width: 200px; }
 
 
