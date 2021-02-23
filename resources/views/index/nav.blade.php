@@ -1,21 +1,21 @@
 <div class="nav">
 	<ul>
-		<li>
-			<a href="{{ url('/') }}" alt="Home" title="Home">
+		<li class="mobile">
+			<a href="{{ url('/home') }}" alt="Home" title="Home">
 				<img src="{{ asset('images/fa-home.png') }}" class="fa-png" alt="Home">
 				<span class="link">Home</span>
 			</a>
 			<div class="active-menu @if(Route::current()->getName() == 'guest_home') active @endif "></div>
 		</li>
-		<li>
-			<a href="{{ url('/subjects') }}" alt="list">
-				<img src="{{ asset('images/fa-search.png') }}" class="fa-png" alt="Subjects" title="Subjects">
+		<li class="mobile">
+			<a href="{{ url('/subjects') }}" alt="List of subjects" >
+				<img src="{{ asset('images/fa-search.png') }}" class="fa-png" alt="List of subjects" title="List of subjects">
 				<span class="link">Subjects</span>
 			</a>
 			<div class="active-menu @if(Route::current()->getName() == 'search') active @endif "></div>
 		</li>
 		<li>
-			<a href="{{ url('/favorites') }}" alt="list">
+			<a href="{{ url('/favorites') }}" alt="Favorites">
 				<img src="{{ asset('images/fa-favorites.png') }}" class="fa-png" alt="Favorites" title="Favorites">
 				<span class="link">Favorites</span>
 			</a>
@@ -29,7 +29,7 @@
 		@endauth
 			@guest
 				<img src="{{ asset('images/fa-login.png') }}" id="img_login" class="fa-png" alt="Login">
-				<a id="btn_login" alt="Login">Login</a>
+				<a id="btn_login" alt="Tutors login">Tutors</a>
 			@endguest
 			@auth
 				@if (Auth::user()->avatar)

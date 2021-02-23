@@ -2,9 +2,9 @@
 .categ-flex-frame .tile  { position: relative; flex-basis: calc(25% - 6px); margin: 3px; box-sizing: border-box; cursor: pointer; overflow: hidden; }
 .categ-flex-frame .tile::before { content: ''; display: block; padding-top: 100%; }
 .categ-flex-frame .color { position: absolute;  top: 0; left: 0; width: 100%; height: 100%; padding: 15px 15px 20px 20px; overflow: hidden;  }
-.categ-flex-frame .color .categ h2 { color: var(--white); font-weight: 800; font-size: 25px; overflow: hidden; }
+.categ-flex-frame .color .categ h2 { color: var(--white); font-size: 26px; overflow: hidden; }
 .categ-flex-frame .color .subjects{ position: absolute; bottom: 0; right: 0; white-space: nowrap;  max-width: 100%; text-align: right; padding: 20px;  }
-.categ-flex-frame .color .subjects h3 { color: var(--white);  font-size: 22px; font-weight: 100 !important;  overflow: hidden; text-overflow: ellipsis; }
+.categ-flex-frame .color .subjects h3 { color: var(--white); font-size: 18px!important; font-family: 'Montserrat', sans-serif !important;  font-weight: 400 !important; padding-bottom: 5px; overflow: hidden; text-overflow: ellipsis; }
 
 .categ-flex-frame .color-gray { background: rgb(120, 120, 120, 0.6); }
 .categ-flex-frame .tile-gray { cursor: default; }

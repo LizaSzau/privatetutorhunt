@@ -8,6 +8,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TutorsListController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -22,7 +23,8 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/', [GuestHomeController::class, 'categoriesListGET'])->name('guest_home');
+Route::get('/', [GuestHomeController::class, 'categoriesListGET']);
+Route::get('home', [GuestHomeController::class, 'categoriesListHomeGET'])->name('guest_home');
 Route::get('subjects', [SearchController::class, 'categoriesListGET'])->name('search');
 
 Route::get('for-tutors-and-teachers', function() { return view('/info/tutors'); });
@@ -41,6 +43,8 @@ Route::get('oauth/{driver}/callback', [LoginController::class, 'handleProviderCa
 Route::get('successfully-registered', function() { return view('/auth/successfully_registered'); });
 Route::get('registration/verify-email/{token}', [RegisterController::class, 'verifyUser']);
 Route::get('registration/verify-email-failed', function() { return view('/auth/verify-email-failed'); });
+
+Route::get('subjects/{category}', [TutorsListController::class, 'tutorsList']);
 
 //------------------------------------------------------------------------------
 // Registered user

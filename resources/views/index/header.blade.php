@@ -16,7 +16,7 @@
 		<link rel="icon" href="{{ asset('images/favicon-192.png') }}" sizes="192x192">
 		<link rel="icon" href="{{ asset('images/favicon-196.png') }}" sizes="196x196">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;800;900&family=Montserrat&display=swap" rel="stylesheet">
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <link href="{{ asset('css/login-modal.css') }}" rel="stylesheet">
     </head>

@@ -16,7 +16,7 @@
 			.frame .left { background: var(--yellow); color: var(--blue-dark); font-size: 30px; }
 			.frame .right { background: url({{ asset('images/error-1.jpg') }}) no-repeat center center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
-			h1 { color: var(--white); font-family: 'avenir-bold'; font-size: 60px; margin-bottom: 60px;}
+			h1 { color: var(--white); font-family: 'Heebo', sans-serif; font-weight: 900; line-height: 60px; font-size: 60px; margin-bottom: 60px;}
 			button { margin-top: 80px; }
 
 			@media (max-width: 960px) { 

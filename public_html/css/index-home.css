@@ -1,0 +1,86 @@
+body { background: var(--blue-light); }
+.home-frame { min-height: 100vh; position: relative; background-image: url('../images/home.jpg'); background-repeat: no-repeat; background-position: right top; background-attachment: fixed; background-size: cover;}
+.home-frame { min-height: 100vh; display: grid; 
+	grid-template-columns:  100%;
+	grid-template-rows: auto 80px;
+	grid-template-areas:
+		'top'
+		'subjects';
+}
+
+.home-frame .top { display: flex; min-height: 100%; }
+.home-frame .top .logo-frame { width: 50%; padding: 60px 100px; }
+.home-frame .top .logo-frame .logo { position: relative;  }
+.home-frame .top .logo-frame .logo div { color: var(--blue-dark); }
+.home-frame .top .logo-frame .logo div.white { color: var(--white); }
+.home-frame .top .logo-frame .logo div .uk { font-family: inherit; font-weight: inherit; color: var(--black); font-size: 30px; }
+.home-frame .top .logo-frame .logo .background { overflow: hidden; position: absolute; top: 90px; left: 50px; background: var(--blue-light); height: 140px; width: 250px; }
+.home-frame .top .logo-frame .logo .background .slogen { letter-spacing: 1px; color: var(--white); padding: 5px; text-align: center; bottom: 0; position: absolute; background: var(--blue-dark); width: 100%; }
+.home-frame .top .logo-frame .logo .text { position: relative; }
+.home-frame .top .logo-frame .logo .text div { font-family: 'Heebo', sans-serif; font-weight: 900; font-size: 60px; line-height: 60px; }
+.home-frame .top .logo-frame .tutors h2 { margin-top: 95px; letter-spacing: 0.7px; color: var(--blue-dark); margin-left: 50px; }
+
+.home-frame .top .enter-frame { padding: 150px 100px 0 100px; }
+.home-frame .top .enter-frame a h1 { margin: 0; padding: 0; }
+.home-frame .top .enter-frame a div { margin-bottom: 30px; min-width: 300px; padding: 20px; border-left: 5px solid var(--blue-dark); background: rgba(255, 255, 255, 0.5);
+	border-top-right-radius: 5px; -moz-border-top-right-radius: 5px; -webkit-border-top-right-radius: 5px; 
+	border-bottom-right-radius: 5px; -moz-border-bottom-right-radius: 5px; -webkit-border-bottom-right-radius: 5px; }
+.home-frame .top .enter-frame a div:hover { background: rgba(255, 255, 255, 0.6); }
+
+.home-frame .subjects { overflow: visible; text-align: center; width: 100%; padding: 20px 60px; background: var(--blue-light); color: var(--white); }
+.home-frame .subjects a { line-height: 24px; padding-bottom: 20px;}
+.home-frame .subjects a:hover { text-decoration: underline; }
+
+
+/**************************************
+MAX 1200
+**************************************/
+@media (max-width: 1200px) { 
+	.home-frame .top { justify-content: space-between; }
+}
+
+/**************************************
+MAX 1100
+**************************************/
+@media (max-width: 1100px) { 
+	.home-frame .top .enter-frame { padding-right: 60px; }
+	.home-frame .top .logo-frame { padding-left: 60px; }
+}
+
+/**************************************
+MAX 900
+**************************************/
+@media (max-width: 900px) { 
+	.home-frame { background-image: url('../images/home-1.jpg'); }
+	.home-frame .top { display: block; }
+	.home-frame .top .logo-frame { width: 100%; }
+	.home-frame .top .enter-frame { margin-left: 10px; padding-top: 60px; }
+	.home-frame .top .logo-frame { padding-bottom: 0; }
+	.home-frame .top .enter-frame a:last-of-type div { margin-bottom: 60px; }
+}
+
+
+/**************************************
+MAX 850
+**************************************/
+@media (max-width: 850px) { 
+	.home-frame { background-image: url('../images/home-2.jpg'); }
+}
+
+/**************************************
+MAX 520
+**************************************/
+@media (max-width: 520px) { 
+	.home-frame .top .enter-frame { padding-right: 30px; padding-left: 80px; margin-left: 0; }
+	.home-frame .top .logo-frame { padding-left: 30px; }
+	.home-frame .top .enter-frame a div { width: 100%; min-width: 100%; }
+}
+
+
+/**************************************
+MAX 390
+**************************************/
+@media (max-width: 390px) { 
+	.home-frame .top .enter-frame { padding-right: 20px; padding-left: 70px;  }
+	.home-frame .top .logo-frame { padding-left: 20px; }
+}

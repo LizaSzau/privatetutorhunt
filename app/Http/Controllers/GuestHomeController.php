@@ -17,6 +17,17 @@ class GuestHomeController extends Controller
 		new CreateViewTables();
 		
 		$data = DB::table('tmp_home')->get();
+		return view('home.main', ['dataCategories' => $data]);
+	}
+	
+//------------------------------------------------------------------------------
+// categoriesListHomeGET
+//------------------------------------------------------------------------------
+
+	public function categoriesListHomeGET() {
+		new CreateViewTables();
+		
+		$data = DB::table('tmp_home')->get();
 		return view('home.index', ['dataCategories' => $data]);
 	}
 }
